@@ -1,4 +1,5 @@
 #+TITLE: Tingkatkan produktifitas ngoding dengan AI
+#+TOC: headlines 3
 * Objektif
 * Prasyarat
 * Pembuka (10 min)
