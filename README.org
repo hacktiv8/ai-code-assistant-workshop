@@ -1,0 +1,197 @@
+#+TITLE: Tingkatkan produktifitas ngoding dengan AI
+* Objektif
+* Prasyarat
+* Pembuka (10 min)
+** Perkembangan asisten koding
+
+Dunia pengembangan perangkat lunak telah mengalami transformasi signifikan dalam alat bantu pemrograman. Bermula dari fitur /autocomplete/ sederhana yang hanya menyelesaikan kata kunci atau nama fungsi yang sudah diketahui, kini berkembang menjadi sistem cerdas yang mampu memahami konteks kode secara menyeluruh. Pada era awal, IDE seperti Visual Studio atau Eclipse menawarkan saran secara statis berdasarkan pustaka yang telah didefinisikan, namun memiliki keterbatasan dalam memahami logika.
+
+Kemajuan teknologi kecerdasan buatan, khususnya model bahasa besar (LLM), telah merevolusi asisten koding menjadi alat yang jauh lebih canggih. Asisten koding modern seperti GitHub Copilot, Cursor, ChatGPT, v0, Aider.chat dan lain sebagainya tidak hanya melengkapi baris kode yang sedang ditulis, tetapi juga mampu menghasilkan fungsi lengkap, algoritma kompleks, dan bahkan seluruh modul berdasarkan deskripsi bahasa manusia. Berbeda dengan cara tradisional, asisten berbasis AI memiliki kemampuan memahami pola penulisan kode dalam skala besar, menganalisis struktur proyek secara keseluruhan, dan menyesuaikan saran dengan gaya dari basis kode. AI  dapat memberikan penjelasan, mengusulkan refaktorisasi, mengidentifikasi kesalahan (bug) potensial, dan bahkan menghasilkan kode pengujian (testing) — kemampuan yang jauh melampaui pencapaian generasi sebelumnya.
+
+** Beberapa jenis asisten koding
+
+*** /AI Chatbot/
+Meski bukan spesifik untuk membantu pemrograman, beberapa AI chatbot dapat digunakan untuk bertanya seputar kode dan pemrograman. Beberapa diantaranya:
+- ChatGPT.com
+- Claude.ai
+- chat.deepseek.com
+- Copilot Chat
+
+*** /Code Completion/
+
+- GitHub Copilot: Asisten koding untuk menghasilkan, melengkapi, dan menyarankan kode secara real-time berdasarkan konteks yang kita berikan. Dapat dijalankan sebagai ekstensi vscode, jetbrains, dan vim.
+- Tabnine: Secara /timeline/ mungkin yang paling duluan, namun saat ini kalah pamor dibandingkan pesaingnya.
+- Supermaven: Dikenal sangat cepat dalam /code generation/ yang dapat digunakan di berbagai kode editor seperti vscode, vim, zed, dll.
+- Codeium
+
+*** /AI interface builder/
+
+- v0: Generative AI dengan /interface chat/ yang dioptimasi untuk mengembangkan komponen React dan ekosistem Next*
+- bolt.new: Generative AI dengan /interface chat/ untuk mengembangkan aplikasi full-stack
+
+*** /AI Code Editor/
+
+AI yang interintegrasi dengan kode editor. Selain mampu memberi saran terhadap kode yang sedang kita tulis (sama halnya dengan /code completion/) /AI Code Editor/ mampu membuat, mengubah atau menghapus satu atau beberapa file sekaligus dalam satu kali perintah.
+
+- Cursor: Pelopor AI Code Editor, populer dan punya UX terbaik saat ini. Fork dari vscode.
+- VSCode + Copilot: Meskipun dalam bentuk extensi, Copilot (chat dan edit) punya kemampuan yang cukup mumpuni.
+- WindSurf: Fork dari vscode yang merupakan karya dari Codeium
+- Trae: Fork dari vscode punya ByteDance. Dapat digunakan secara gratis
+- Aider, Claude Code: Menggunakan antarmuka teks (cli), dapat digunakan dengan editor kode apapun.
+
+** Kegiatan ngoding
+Ketika ingin membangun aplikasi atau membuat sesuatu, hal berikut yang biasanya kita lakukan.
+
+#+BEGIN_SRC text
++----------+        +---------+        +----------+
+|          |        |         |        |          |
+| Diskusi  | -----> |  Susun  | -----> | Eksekusi |
+|   Ide    |        | Rencana |        |          |
+|          |        |         |        |          |
++----------+        +---------+        +----------+
+                                             |
+                                             |
+                                             V
+                                        +----------+
+                                        |          |
+                                        |  Kelola  |
+                                        |          |
+                                        +----------+
+#+END_SRC
+
+* Diskusi ide dengan AI (15 min)
+
+Kita bisa memanfaatkan chatbot untuk mendiskusikan ide atau memilih ide yang menarik atau /brainstorming/. Setelah ide sudah ditentukan. Ketika ide sudah didapat, kita dapat kembali menggunakan chatbot untuk mematangkan ide kita.
+
+Gunakan AI chatbot untuk mematangkan ide (chatgp, claude):
+
+#+BEGIN_SRC txt
+Ask me one question at a time so we can develop a thorough,
+step-by-step spec for this idea. Each question should build on
+my previous answers, and our end goal is to have a detailed
+specification I can hand off to a developer. Let’s do this
+iteratively and dig into every relevant detail.
+Remember, only one question at a time.
+
+Here’s the idea:
+
+#+END_SRC
+
+Contoh ide:
+- ~I want to develop a platform to store my ideas in one place.~
+
+Setelah berdiskusi dengan AI Chatbot, hasil diskusi dikemas dalam format spesifikasi aplikasi atau spec.
+
+#+BEGIN_SRC txt
+Now that we’ve wrapped up the brainstorming process,
+can you compile our findings into a comprehensive,
+developer-ready specification? Include all relevant
+requirements, architecture choices, data handling details,
+error handling strategies, and a testing plan so
+a developer can immediately begin implementation.
+#+END_SRC
+
+
+* Menyusun rencana dengan AI (15 min)
+Setelah ide cukup matang, saatnya merencanakan sebelum melakukan eksekusi rencana tersebut. Kita bisa menggunakan spec dari proses pematangan ide diatas untuk kemudian meminta bantuan AI untuk membuat rencana.
+
+Disarankan menggunakan model yang mampu berfikir (lebih panjang) seperti chatgpt o1, deepseek deepthink, atau Qwen Thinking.
+
+#+BEGIN_SRC text
+Draft a detailed, step-by-step blueprint for building this
+project. Then, once you have a solid plan, break it down
+into small, iterative chunks that build on each other.
+Look at these chunks and then go another round to break it
+into small steps. review the results and make sure that the
+steps are small enough to be implemented safely,
+but big enough to move the project forward.
+Iterate until you feel that the steps are right sized for
+this project.
+
+From here you should have the foundation to provide
+a series of prompts for a code-generation LLM that will
+implement each step. Prioritize best practices,
+and incremental progress, ensuring no big jumps in
+complexity at any stage. Make sure that each prompt builds
+on the previous prompts, and ends with wiring things
+together. There should be no hanging or orphaned code that
+isn't integrated into a previous step.
+
+Make sure and separate each prompt section. Use markdown.
+Each prompt should be tagged as text using code tags.
+The goal is to output prompts, but context, etc is important
+as well.
+
+<SPEC>
+#+END_SRC
+
+/Prompt/ diatas menghasilkan rencana eksekusi dan tiap iterasi dilengkapi dengan prompting yang sesuai yang nantinya akan kita gunakan sebagai perintah di AI Code Editor. Hasil dari /prompt/ diatas bisa disimpan kedalam sebuah file untuk nantinya digunakan. Jangan lupa dibaca perlahan dan lakukan perubahan jika diperlukan. AI punya sifat dasar halusinasi.
+
+Setelah rencana dan strategi sudah siap, saatnya eksekusi dan membangun aplikasi.
+
+* Eksekusi menulis kode dengan AI (20 min)
+Dari rencana yang sudah dikembangkan, kita bisa mulai eksekusi. Bisa langsung dengan menggunakan AI Code Editor seperti vscode+copilot, cursor atau yang serupa.
+
+Pengalaman sejauh ini, jika teknologi yang digunakan butuh integrasi manual seperti project berbasis nodejs dengan backend Express/Hono ditambah database apapun, seringkali mengalami kesulitan. Selalu ada saja kesalahan atau /error/ yang seharusnya tidak perlu terjadi.
+
+Menggunakan /project boilerplate/ yang sudah mengintegrasikan berbagai hal berbeda sepertinya lebih masuk akal. Atau sekalian menggunakan fullstack framework seperti Elixir Phoenix, Ruby on Rails atau Laravel. Adonis bisa menjadi alternatif, tapi saya pribadi belum pernah mencobanya.
+
+Ada beberapa alasan yang menyebabkan hal ini (menurut saya pribadi). Scope yang terlalu besar untuk ditangani AI hingga kita harus memecah lagi tugas-tugas tersebut menjadi tugas yang lebih kecil.
+
+Sehingga menggunakan alat bantu seperti AI UI Generator merupakan cara yang bisa ditempuh.
+
+** Desain antarmuka
+Jika v0 lebih cocok digunakan untuk mendesain komponen, bolt.new dapat kita manfaatkan untuk membangun UI untuk aplikasi fullstack.
+
+Kita bisa menggunakan informasi di spec yang sudah dibuat sebagai /prompting/ untuk bolt ini.
+
+Contoh
+
+#+BEGIN_SRC txt
+Objective:
+Develop a platform to store text-based ideas with search functionality and a minimalist neo-brutalist design.
+
+Requirements:
+
+Core Features:
+
+Text Note Storage: Users can store plain text notes.
+Search Functionality: Full-text search to locate notes.
+Note Management: Users can edit and delete existing notes. Idea Creation: If no search results match, users can save the entered text as a new idea.
+Design:
+
+Style: Minimalist, neo-brutalist design approach with a focus on functionality.
+Theme: Light theme only.
+Layout: Main page includes a search form with results shown below.
+#+END_SRC
+
+[[file:./screenshots/bolt.png][bolt.new]]
+
+Hasil dari bolt dapat diunduh lalu dijalankan di localhost dan dibuka dengan AI Code Editor pilihan.
+
+** Mengembangka aplikasi
+Untuk workshop ini akan dicontohkan menggunakan vscode+copilot.
+
+Gunakan prompt plan yang sudah didapat dari bagian sebelumnya untuk mulai melakukan iterasi pengembangan aplikasi. Tidak perlu terlalu terpaku kepada prompt yang sudah disediakan, silakan diubah atau diganti jika kurang sesuai.
+
+Karena prompt dibuat oleh AI juga ada kemungkinan keliru, jadi harap diteliti lebih lanjut.
+
+Untuk copilot sendiri, saat ini ada 3 fitur utama:
+- /code completion/ yang akan membantu ketika kita menulis kode
+- Copilot Chat yang dapat digunakan untuk diskusi dan bertanya dengan antarmuka chat. Contoh: "jelaskan alur kode dari proyek ini".
+- Copilot Edit mampu memodifikasi satu atau beberapa file sesuai dengan menggunakan instruksi yang diberikan.
+
+* Mengelola kode dengan AI (15 min)
+- Input: Kode sumber
+- Output: Dokumentasi, kode yang rapi, optimasi, refactor
+- Alat bantu
+    - Copilot
+    - Cursor
+    - Cline
+    - WindSurf
+
+* Penutup (10 min)
+- Tantangan
+- Tips dan trik
+- Kesimpulan
+- Diskusi (tanya jawab)
