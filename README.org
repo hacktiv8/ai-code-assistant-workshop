@@ -36,7 +36,7 @@ Meski bukan spesifik untuk membantu pemrograman, beberapa AI chatbot dapat digun
 
 Selain untuk meminta saran untuk kode, AI berbasis chatbot seperti ini sangat cocok untuk diskusi atau /brainstorming/.
 
-[[./screenshots/claude.png][contoh AI chatbot claude]]
+[[./screenshots/claude.png]]
 
 **** /AI Code Completion/
 Dibawah ini beberapa alat yang dapat membantu untuk melengkapi kode disaat kita sedang menulis kode di editor.
@@ -46,7 +46,7 @@ Dibawah ini beberapa alat yang dapat membantu untuk melengkapi kode disaat kita 
 - Supermaven: Dikenal sangat cepat dalam /code generation/ yang dapat digunakan di berbagai kode editor seperti vscode, vim, zed, dll.
 - Codeium: Ekstensi vscode /open-source/ yang dapat digunakan secara gratis untuk penggunaan personal.
 
-[[./screenshots/completion.png][contoh code completion dengan vscode]]
+[[./screenshots/completion.png]]
 
 **** /AI Code Editor/
 
@@ -60,7 +60,7 @@ AI yang interintegrasi dengan kode editor. Selain mampu memberi saran terhadap k
 - Trae: Fork dari vscode punya ByteDance. Dapat digunakan secara gratis
 - Aider, Claude Code: Menggunakan antarmuka teks (/cli/), dapat digunakan dengan editor kode apapun.
 
-[[file:./screenshots/claude-code.jpg][Contoh tampilan Claude Code]]
+[[file:./screenshots/claude-code.jpg]]
 
 **** /AI interface builder/
 AI yang spesifik digunakan untuk membangun /user interface/ atau desain. Jika chatbot dapat digunakan untuk apa saja termasuk membangun UI, /AI code completion/ dan /AI code editor/ pun bisa, tapi hasilnya lumayan berbeda. Mungkin karena AI ini menggunakan model yang memang dilatih untuk mengembangkan UI. Ada beberapa alat yang bisa digunakan.
@@ -70,7 +70,7 @@ AI yang spesifik digunakan untuk membangun /user interface/ atau desain. Jika ch
 - lovable.dev: Aplikasi yang mampu membuat aplikasi fullstack. Cocok untuk konversi desain figma menjadi kode.
 
 Berikut contoh tangkapan layar dari v0.
-[[file:./screenshots/v0.png][Tangkapan layar v0]]
+[[file:./screenshots/v0.png]]
 
 
 *** Kegiatan ngoding
@@ -116,7 +116,7 @@ Contoh ide:
 I want to develop a platform to store my ideas in one place.
 #+END_SRC
 
-[[file:./screenshots/claude.png][Contoh brainstorming ide dengan claude]]
+[[file:./screenshots/claude.png]]
 
 Setelah berdiskusi dengan AI Chatbot, hasil diskusi dikemas dalam format spesifikasi aplikasi atau spec.
 
@@ -203,7 +203,7 @@ Setelah ide cukup matang, saatnya merencanakan sebelum melakukan eksekusi rencan
 
 Disarankan menggunakan model yang mampu berfikir (lebih panjang) seperti chatgpt o1, deepseek deepthink, atau Qwen Thinking.
 
-[[file:./screenshots/deepseek-r1.png][Mengaktifkan fitur berfikir panjang di deepseek]]
+[[file:./screenshots/deepseek-r1.png]]
 
 #+BEGIN_SRC text
 Draft a detailed, step-by-step blueprint for building this
@@ -418,7 +418,7 @@ Layout: Main page includes a search form with results shown below.
 #+END_SRC
 
 
-[[file:./screenshots/bolt.png][tampilan layar bolt.new]]
+[[file:./screenshots/bolt.png]]
 
 Hasil dari bolt dapat diunduh lalu dijalankan di localhost dan dibuka dengan AI Code Editor pilihan.
 
@@ -436,7 +436,7 @@ Untuk copilot sendiri, saat ini ada 3 fitur utama:
 
 Jalankan iterasi satu-per-satu. Jika saat menjalankan sebuah iterasi dibutuhkan penyesuaian, lakukan terlebih dahulu sebelum menuju ke iterasi berikutnya.
 
-[[file:./screenshots/contoh-iterasi.png][Contoh saat menjalankan salah satu iterasi di vscode copilot edit]]
+[[file:./screenshots/contoh-iterasi.png]]
 
 ** Mengelola kode dengan AI (15 min)
 Setelah proses pengembangan fitur sudah (dianggap) selesai, langkah berikutnya adalah mengelola kode yang sudah dibuat. AI juga dapat membantu proses pengelolaan kode.
@@ -448,14 +448,14 @@ Pertama lakukan satu pengujian secara manual, lalu minta AI untuk menambahkan. B
 
 Teknik ini dalam LLM disebut sebagai /few-shot prompting/. Sederhananya, kita memberi satu atau beberapa contoh untuk kemudian dilanjutkan oleh LLM. Untuk lebih jelasnya bisa [[https://dekontaminasi.substack.com/p/menyundul-llm-dengan-contoh-nyata][ simak artikel berikut ]].
 
-[[file:./screenshots/testing.png][contoh testing]]
+[[file:./screenshots/testing.png]]
 
 *** Menambahkan dokumentasi
 Sebagai pemrogram, kegiatan menulis dokumentasi terasa berat. Inginnya menulis kode aja kan ya 😬 Nah sekarang kita bisa mendelegasikan tugas menulis dokumentasi kepada AI.
 
 Misalnya kita ingin mendokumentasikan sebuah fungsi. Biasanya kita menggunakan alat seperti JSDoc/JavaDoc/docstring (tergantung bahasa).
 
-[[file:./screenshots/jsdoc.png][Menambahkan dokumentasi kode]]
+[[file:./screenshots/jsdoc.png]]
 
 Apabila hasil dokumentasinya /ngaco/? AI saja yang sudah dilatih dengan milyaran baris kode di luar sana, masih nggak paham juga dengan kodingan kita, kira-kira yang ngaco siapa ya? Mungkin ini adalah peringatan dini buat kita bahwa kodingan kita kurang dapat dimengerti dan harus segera diperbaiki atau disederhanakan 😉
 
@@ -464,7 +464,7 @@ Ketika proses penulisan kode baik dengan bantuan AI ataupun tidak, fokus awal ki
 
 Contoh nyata: kode dijadikan satu file di ~App.tsx~. Sebaiknya dipisah per komponen. Mari kita minta bantuan AI!
 
-[[file:./screenshots/refactor.png][Minta bantuan AI untuk refactor]]
+[[file:./screenshots/refactor.png]]
 
 Bisa juga untuk meminta bantuan AI untuk mengubah kode kita sehingga menggunakan /Clean Architecture/ misalnya. Atau minta dicek apakah proyek kita sudah cukup jelas, DRY (Don't Repeat Yourself) dan berbagai metode lainnya.
 
