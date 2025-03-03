@@ -2,12 +2,14 @@
 #+TOC: headlines 3
 * Objektif
 * Prasyarat
+- Instalasi vscode
+- Instalasi copilot
 * Pembuka (10 min)
 ** Perkembangan asisten koding
 
 Dunia pengembangan perangkat lunak telah mengalami transformasi signifikan dalam alat bantu pemrograman. Bermula dari fitur /autocomplete/ sederhana yang hanya menyelesaikan kata kunci atau nama fungsi yang sudah diketahui, kini berkembang menjadi sistem cerdas yang mampu memahami konteks kode secara menyeluruh. Pada era awal, IDE seperti Visual Studio atau Eclipse menawarkan saran secara statis berdasarkan pustaka yang telah didefinisikan, namun memiliki keterbatasan dalam memahami logika.
 
-Kemajuan teknologi kecerdasan buatan, khususnya model bahasa besar (LLM), telah merevolusi asisten koding menjadi alat yang jauh lebih canggih. Asisten koding modern seperti GitHub Copilot, Cursor, ChatGPT, v0, Aider.chat dan lain sebagainya tidak hanya melengkapi baris kode yang sedang ditulis, tetapi juga mampu menghasilkan fungsi lengkap, algoritma kompleks, dan bahkan seluruh modul berdasarkan deskripsi bahasa manusia. Berbeda dengan cara tradisional, asisten berbasis AI memiliki kemampuan memahami pola penulisan kode dalam skala besar, menganalisis struktur proyek secara keseluruhan, dan menyesuaikan saran dengan gaya dari basis kode. AI  dapat memberikan penjelasan, mengusulkan refaktorisasi, mengidentifikasi kesalahan (bug) potensial, dan bahkan menghasilkan kode pengujian (testing) — kemampuan yang jauh melampaui pencapaian generasi sebelumnya.
+Kemajuan teknologi kecerdasan buatan, khususnya model bahasa besar (LLM), telah merevolusi asisten koding menjadi alat yang jauh lebih canggih. Asisten koding modern seperti GitHub Copilot, Cursor, ChatGPT, v0, Aider.chat dan lain sebagainya tidak hanya melengkapi baris kode yang sedang ditulis, tetapi juga mampu menghasilkan fungsi lengkap, algoritma kompleks, dan bahkan seluruh modul berdasarkan deskripsi bahasa manusia. Berbeda dengan cara tradisional, asisten berbasis AI memiliki kemampuan memahami pola penulisan kode dalam skala besar, menganalisis struktur proyek secara keseluruhan, dan menyesuaikan saran dengan gaya dari basis kode yang sudah ada. AI dapat memberikan penjelasan, mengusulkan refaktorisasi, mengidentifikasi kesalahan (/bug/) potensial, dan bahkan menghasilkan kode pengujian (/testing/) — kemampuan yang jauh melampaui pencapaian generasi sebelumnya.
 
 ** Beberapa jenis asisten koding
 
@@ -16,21 +18,24 @@ Meski bukan spesifik untuk membantu pemrograman, beberapa AI chatbot dapat digun
 - ChatGPT.com
 - Claude.ai
 - chat.deepseek.com
-- Copilot Chat
 
-*** /Code Completion/
+Selain untuk meminta saran untuk kode, AI berbasis chatbot seperti ini sangat cocok untuk diskusi atau /brainstorming/.
+
+[[file:/Users/riza/code/ai-coding-assistant-workshop/screenshots/claude.png][contoh AI chatbot claude]]
+
+*** /AI Code Completion/
+Dibawah ini beberapa alat yang dapat membantu untuk melengkapi kode disaat kita sedang menulis kode di editor.
 
 - GitHub Copilot: Asisten koding untuk menghasilkan, melengkapi, dan menyarankan kode secara real-time berdasarkan konteks yang kita berikan. Dapat dijalankan sebagai ekstensi vscode, jetbrains, dan vim.
 - Tabnine: Secara /timeline/ mungkin yang paling duluan, namun saat ini kalah pamor dibandingkan pesaingnya.
 - Supermaven: Dikenal sangat cepat dalam /code generation/ yang dapat digunakan di berbagai kode editor seperti vscode, vim, zed, dll.
-- Codeium
+- Codeium: Ekstensi vscode /open-source/ yang dapat digunakan secara gratis untuk penggunaan personal.
 
-*** /AI interface builder/
-
-- v0: Generative AI dengan /interface chat/ yang dioptimasi untuk mengembangkan komponen React dan ekosistem Next*
-- bolt.new: Generative AI dengan /interface chat/ untuk mengembangkan aplikasi full-stack
+[[file:/Users/riza/code/ai-coding-assistant-workshop/screenshots/completion.png][contoh code completion dengan vscode]]
 
 *** /AI Code Editor/
+
+Evolusi berikutnya dari /code completion/. Jika /code completion/ mampu mengerti kode yang sedang dibuka saat itu, maka /AI Code Editor/ mampu memahami proyek secara keseluruhan.
 
 AI yang interintegrasi dengan kode editor. Selain mampu memberi saran terhadap kode yang sedang kita tulis (sama halnya dengan /code completion/) /AI Code Editor/ mampu membuat, mengubah atau menghapus satu atau beberapa file sekaligus dalam satu kali perintah.
 
@@ -38,10 +43,21 @@ AI yang interintegrasi dengan kode editor. Selain mampu memberi saran terhadap k
 - VSCode + Copilot: Meskipun dalam bentuk extensi, Copilot (chat dan edit) punya kemampuan yang cukup mumpuni.
 - WindSurf: Fork dari vscode yang merupakan karya dari Codeium
 - Trae: Fork dari vscode punya ByteDance. Dapat digunakan secara gratis
-- Aider, Claude Code: Menggunakan antarmuka teks (cli), dapat digunakan dengan editor kode apapun.
+- Aider, Claude Code: Menggunakan antarmuka teks (/cli/), dapat digunakan dengan editor kode apapun.
+
+*** /AI interface builder/
+AI yang spesifik digunakan untuk membangun /user interface/ atau desain. Jika chatbot dapat digunakan untuk apa saja termasuk membangun UI, /AI code completion/ dan /AI code editor/ pun bisa, tapi hasilnya lumayan berbeda. Mungkin karena AI ini menggunakan model yang memang dilatih untuk mengembangkan UI. Ada beberapa alat yang bisa digunakan.
+
+- v0.dev: Generative AI dengan /interface chat/ yang dioptimasi untuk mengembangkan komponen React dan ekosistem Next.
+- bolt.new: Generative AI dengan /interface chat/ untuk mengembangkan aplikasi frontend.
+- lovable.dev: Aplikasi yang mampu membuat aplikasi fullstack.
+
+Berikut contoh tangkapan layar dari v0.
+[[file:/Users/riza/code/ai-coding-assistant-workshop/screenshots/v0.png][Tangkapan layar v0]]
+
 
 ** Kegiatan ngoding
-Ketika ingin membangun aplikasi atau membuat sesuatu, hal berikut yang biasanya kita lakukan.
+Di workshop kali ini kita akan menjajal sejauh mana AI bisa membantu kita dalam proses membangun aplikasi dari awal. Ketika ingin membangun aplikasi atau membuat sesuatu, umumnya dimulai dari memikirkan ide yang ingin dieksekusi, menyusun rencana, membangun aplikasi dan fitur hingga mengelola kode yang sudah dikembangkan. Kira-kira seperti ilustrasi dibawah.
 
 #+BEGIN_SRC text
 +----------+        +---------+        +----------+
@@ -62,9 +78,9 @@ Ketika ingin membangun aplikasi atau membuat sesuatu, hal berikut yang biasanya 
 
 * Diskusi ide dengan AI (15 min)
 
-Kita bisa memanfaatkan chatbot untuk mendiskusikan ide atau memilih ide yang menarik atau /brainstorming/. Setelah ide sudah ditentukan. Ketika ide sudah didapat, kita dapat kembali menggunakan chatbot untuk mematangkan ide kita.
+Kita bisa memanfaatkan chatbot untuk mendiskusikan ide atau memilih ide yang menarik atau /brainstorming/. Ketika ide sudah didapat, kita dapat kembali menggunakan chatbot untuk mematangkan ide kita.
 
-Gunakan AI chatbot untuk mematangkan ide (chatgp, claude):
+Gunakan AI chatbot dengan prompt dibawah untuk mematangkan ide (misalnya menggunakan chatgp, claude):
 
 #+BEGIN_SRC txt
 Ask me one question at a time so we can develop a thorough,
@@ -79,7 +95,11 @@ Here’s the idea:
 #+END_SRC
 
 Contoh ide:
-- ~I want to develop a platform to store my ideas in one place.~
+#+BEGIN_SRC txt
+I want to develop a platform to store my ideas in one place.
+#+END_SRC
+
+[[file:/Users/riza/code/ai-coding-assistant-workshop/screenshots/claude.png][Contoh brainstorming ide dengan claude]]
 
 Setelah berdiskusi dengan AI Chatbot, hasil diskusi dikemas dalam format spesifikasi aplikasi atau spec.
 
@@ -92,11 +112,81 @@ error handling strategies, and a testing plan so
 a developer can immediately begin implementation.
 #+END_SRC
 
+Hasilnya bisa disimpan kedalam dokumen teks seperti ~spec.md~ misalnya. Berikut contoh spesifikasi yang dihasilkan oleh ChatGPT.
+
+#+BEGIN_SRC markdown
+# Idea Storage Web App Specification
+
+## Project Overview
+A web application designed to capture and retrieve user-generated ideas using a clean and efficient user interface, built with a mobile-first, minimalist, neo-brutalist design approach.
+
+## Tech Stack
+- **TypeScript:** Static typing for enhanced code reliability and maintainability.
+- **React:** Component-based library for building a responsive front-end.
+- **Vite:** For fast development and deployment environments.
+- **LocalStorage:** Client-side storage for persisting user data.
+- **Tailwind CSS:** Utility-first CSS framework to implement styling.
+
+## Features and Requirements
+
+### User Interface
+1. **Main Page Components:**
+- **Idea Input Form:** Simple text input with a submit button.
+- [ ] Text input field with a placeholder, e.g., "Enter your idea here..."
+- [ ] Submit button to save ideas.
+- **Search Functionality:**
+- [ ] Real-time search that filters ideas based on content as the user types.
+- **Idea Display Area:**
+- [ ] Ideas presented as cards beneath the input form.
+- [ ] Static display; no edit or delete options.
+
+2. **Design Guidelines:**
+- Mobile-first, responsive layout.
+- Light-themed neo-brutalist design using Tailwind CSS.
+- Minimalist style with intuitive UI components.
+
+### Architecture
+- **Components:**
+- `MainPage.tsx`: Houses the form, search bar, and idea list.
+- `IdeaCard.tsx`: Renders each idea in card format.
+- **State Management:**
+- Use React hooks (`useState`, `useEffect`) for managing local state and effects.
+
+### Data Handling
+- **localStorage:**
+- Store and retrieve ideas as plain text strings within `localStorage`.
+- Maintain a key-value structure for easy access and retrieval (e.g., `ideas` key for storing serialized array of ideas).
+- **Custom Hook:**
+- `useLocalIdeasStorage`: Handles reading from and writing to `localStorage`.
+
+### Error Handling
+- Graceful Handling:
+- **Input Errors:** Prevent submission of empty ideas via form validation.
+- **Storage Errors:** Handle any potential storage issues with fallbacks and user notifications if localStorage is unavailable or unsupported.
+
+### Testing Plan
+- **Unit Testing:**
+- Test components in isolation using a library like Jest and React Testing Library, ensuring correct rendering and functionality.
+- **Integration Testing:**
+- Validate that components work seamlessly together, particularly form input, search functionality, and data storage.
+- **UI/UX Testing:**
+- Ensure responsive and consistent behavior across devices and screen sizes.
+- Verify compliance of the UI with design specifications.
+- **User Testing:**
+- Conduct tests for edge cases, such as large input sizes and rapid successive inputs, to ensure reliability.
+
+## Deployment
+- Use a platform like Netlify or Vercel for easy and continuous deployment.
+- Ensure configurations support responsive design and asset optimization.
+
+#+END_SRC
 
 * Menyusun rencana dengan AI (15 min)
 Setelah ide cukup matang, saatnya merencanakan sebelum melakukan eksekusi rencana tersebut. Kita bisa menggunakan spec dari proses pematangan ide diatas untuk kemudian meminta bantuan AI untuk membuat rencana.
 
 Disarankan menggunakan model yang mampu berfikir (lebih panjang) seperti chatgpt o1, deepseek deepthink, atau Qwen Thinking.
+
+[[file:/Users/riza/code/ai-coding-assistant-workshop/screenshots/deepseek-r1.png][Mengaktifkan fitur berfikir panjang di deepseek]]
 
 #+BEGIN_SRC text
 Draft a detailed, step-by-step blueprint for building this
@@ -128,23 +218,167 @@ as well.
 
 /Prompt/ diatas menghasilkan rencana eksekusi dan tiap iterasi dilengkapi dengan prompting yang sesuai yang nantinya akan kita gunakan sebagai perintah di AI Code Editor. Hasil dari /prompt/ diatas bisa disimpan kedalam sebuah file untuk nantinya digunakan. Jangan lupa dibaca perlahan dan lakukan perubahan jika diperlukan. AI punya sifat dasar halusinasi.
 
+Berikut contoh dokumen yang dihasilkan oleh AI Chatbot dengan fitur reasoning. Contoh dibawah ini menggunakan ChatGPT.
+
+#+BEGIN_SRC markdown
+## **Creating Prompts for Code-Generation LLM**
+
+Below are the prompts for each step, formatted with code tags using Markdown. Each prompt builds upon the previous steps and ensures all code is integrated.
+
+---
+
+### **Prompt for Step 2: Initialize the Project**
+
+```text
+Please create a new Vite project using React and TypeScript. Open a terminal and run `npm create vite@latest`. When prompted, name the project "idea-storage-app" and select the React and TypeScript template. Navigate into the project directory and install dependencies with `npm install`. Initialize a Git repository with `git init`, add all files with `git add .`, and make the initial commit with the message "Initial commit".
+```
+
+---
+
+### **Prompt for Step 3: Set Up Tailwind CSS**
+
+```text
+In the "idea-storage-app" project, set up Tailwind CSS. Install Tailwind CSS and its dependencies by running `npm install -D tailwindcss postcss autoprefixer`. Initialize Tailwind by running `npx tailwindcss init -p`. In `tailwind.config.js`, set the `content` array to `["./index.html", "./src/**/*.{ts,tsx}"]`. In the `src` directory, create a new `index.css` file if it doesn't exist, and add the Tailwind directives:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+Ensure that `index.css` is imported in your main application file.
+
+```
+
+---
+
+### **Prompt for Step 4: Build the Basic Application Structure**
+
+```text
+In the project, remove unnecessary files from the Vite template, such as default logos and styles. Create a `components` directory inside `src`. Within `components`, create two new files: `MainPage.tsx` and `IdeaCard.tsx`. Update `App.tsx` to import and render the `MainPage` component. Ensure that the application runs without errors by starting the development server with `npm run dev`.
+```
+
+---
+
+### **Prompt for Step 5: Implement the Idea Input Form**
+
+```text
+In `MainPage.tsx`, implement an idea input form. Inside the `MainPage` component, add a `<form>` element containing:
+
+- A text `<input>` field with the placeholder "Enter your idea here..." and appropriate Tailwind CSS classes for styling.
+- A submit `<button>` labeled "Add Idea", also styled with Tailwind CSS.
+
+Use React's `useState` hook to manage the state of the input field. Implement a `handleSubmit` function that:
+
+- Prevents the default form submission behavior.
+- Adds the new idea to a list of ideas.
+- Clears the input field after submission.
+
+Ensure the form calls `handleSubmit` on submission.
+```
+
+---
+
+### **Prompt for Step 6: Implement LocalStorage Functionality**
+
+```text
+Create a custom hook named `useLocalIdeasStorage` in a new `hooks` directory inside `src`. This hook should:
+
+- Use `useState` to manage the list of ideas.
+- On initialization, load any existing ideas from `localStorage` and set them in state.
+- Provide a function `addIdea` to add a new idea to the list and save it to `localStorage`.
+- Use `useEffect` to update `localStorage` whenever the list of ideas changes.
+
+In `App.tsx`, replace the local state management for ideas with this custom hook. Update `handleSubmit` to use `addIdea` from the hook to add new ideas.
+```
+
+---
+
+### **Prompt for Step 7: Implement the Idea Display Area**
+
+```text
+In `MainPage.tsx`, after the idea input form, display the list of ideas. Map over the list of ideas obtained from `useLocalIdeasStorage` and render an `IdeaCard` for each. Pass the idea text as a prop to `IdeaCard`.
+
+In `IdeaCard.tsx`, accept the idea text as a prop and display it within a styled card. Use Tailwind CSS classes to style the card with a neo-brutalist design, incorporating elements like bold borders, high-contrast colors, and simple typography. Ensure that the idea cards appear beneath the input form and are visually separated.
+```
+
+---
+
+### **Prompt for Step 8: Implement Real-Time Search Functionality**
+
+```text
+In `MainPage.tsx`, add a search `<input>` field above the list of ideas with the placeholder "Search ideas..." and style it appropriately with Tailwind CSS. Use `useState` to manage the search term state. Implement a function that filters the list of ideas based on the search term, updating the displayed ideas in real-time as the user types.
+
+Ensure that the filtering is case-insensitive and matches any part of the idea text. When the search field is empty, all ideas should be displayed. Test the search functionality to confirm it works smoothly without performance issues.
+```
+
+---
+
+### **Prompt for Step 9: Apply Neo-Brutalist Styling**
+
+```text
+Apply neo-brutalist styling to the entire application using Tailwind CSS, ensuring a minimalist, light theme. In particular:
+
+- **Input Fields and Buttons:**
+- Use simple, solid colors with high contrast.
+- Apply thick borders and sharp edges (no border-radius).
+- Use bold, sans-serif fonts for text.
+- **Idea Cards:**
+- Maintain a consistent card size.
+- Use minimal decoration—focus on content.
+- Implement hover effects that align with neo-brutalist aesthetics.
+- **Layout:**
+- Ensure elements are aligned and spaced consistently.
+- Design with a mobile-first approach, making sure the app looks good on small screens.
+- Use responsive utility classes in Tailwind CSS to adjust styles for larger screens.
+
+Review and adjust the styles as necessary to maintain visual consistency and adhere to neo-brutalist principles.
+```
+
+---
+
+### **Prompt for Step 10: Testing and Deployment Preparation**
+
+```text
+Perform thorough testing of the application:
+
+- **Functionality Testing:**
+- Test adding ideas, ensuring they appear in the list and are saved to `localStorage`.
+- Test the search functionality with various input cases.
+- Verify that ideas persist after refreshing the page.
+- **Responsive Design Testing:**
+- Use browser developer tools to test the app on different screen sizes.
+- Ensure that the layout adapts correctly on mobile, tablet, and desktop views.
+- **Cross-Browser Testing:**
+- Check compatibility with modern browsers like Chrome, Firefox, Safari, and Edge.
+
+Fix any issues discovered during testing. Once satisfied, prepare the app for deployment:
+
+- Build the production version of the app using `npm run build`.
+- Choose a deployment platform like Netlify or Vercel.
+- Follow the platform's instructions to deploy the app, ensuring that all environment configurations are correctly set.
+- Test the deployed app to confirm it works as expected in the live environment.
+```
+
+#+END_SRC
+
 Setelah rencana dan strategi sudah siap, saatnya eksekusi dan membangun aplikasi.
 
 * Eksekusi menulis kode dengan AI (20 min)
 Dari rencana yang sudah dikembangkan, kita bisa mulai eksekusi. Bisa langsung dengan menggunakan AI Code Editor seperti vscode+copilot, cursor atau yang serupa.
 
-Pengalaman sejauh ini, jika teknologi yang digunakan butuh integrasi manual seperti project berbasis nodejs dengan backend Express/Hono ditambah database apapun, seringkali mengalami kesulitan. Selalu ada saja kesalahan atau /error/ yang seharusnya tidak perlu terjadi.
+Pengalaman pribadi sejauh ini, jika teknologi yang digunakan butuh integrasi manual seperti project berbasis nodejs dengan backend Express/Hono ditambah database apapun, seringkali mengalami kesulitan. Selalu ada saja kesalahan atau /error/ yang seharusnya tidak perlu terjadi.
 
-Menggunakan /project boilerplate/ yang sudah mengintegrasikan berbagai hal berbeda sepertinya lebih masuk akal. Atau sekalian menggunakan fullstack framework seperti Elixir Phoenix, Ruby on Rails atau Laravel. Adonis bisa menjadi alternatif, tapi saya pribadi belum pernah mencobanya.
+Menggunakan /project boilerplate/ yang sudah mengintegrasikan berbagai hal berbeda sepertinya lebih cocok. Atau sekalian menggunakan fullstack framework seperti Elixir Phoenix, Ruby on Rails atau Laravel. Adonis bisa menjadi alternatif, tapi saya pribadi belum mencobanya.
 
-Ada beberapa alasan yang menyebabkan hal ini (menurut saya pribadi). Scope yang terlalu besar untuk ditangani AI hingga kita harus memecah lagi tugas-tugas tersebut menjadi tugas yang lebih kecil.
+Ada beberapa alasan yang menyebabkan hal ini (setidaknya menurut saya pribadi). Scope yang terlalu besar untuk ditangani AI hingga kita harus memecah lagi tugas-tugas tersebut menjadi tugas yang lebih kecil.
 
 Sehingga menggunakan alat bantu seperti AI UI Generator merupakan cara yang bisa ditempuh.
 
 ** Desain antarmuka
-Jika v0 lebih cocok digunakan untuk mendesain komponen, bolt.new dapat kita manfaatkan untuk membangun UI untuk aplikasi fullstack.
+Jika v0 lebih cocok digunakan untuk mendesain komponen, bolt.new dapat kita manfaatkan untuk membangun UI untuk aplikasi frontend. Dari hasil desain frontend ini dapat dilanjutkan untuk mengembangkan backend, menambahkan database dan seterusnya dengan vscode+copilot.
 
-Kita bisa menggunakan informasi di spec yang sudah dibuat sebagai /prompting/ untuk bolt ini.
+Kita bisa menggunakan informasi di ~spec.md~ yang sudah dibuat sebagai /prompting/ untuk bolt ini.
 
 Contoh
 
@@ -166,14 +400,15 @@ Theme: Light theme only.
 Layout: Main page includes a search form with results shown below.
 #+END_SRC
 
-[[file:./screenshots/bolt.png][bolt.new]]
+
+[[file:./screenshots/bolt.png][tampilan layar bolt.new]]
 
 Hasil dari bolt dapat diunduh lalu dijalankan di localhost dan dibuka dengan AI Code Editor pilihan.
 
 ** Mengembangka aplikasi
-Untuk workshop ini akan dicontohkan menggunakan vscode+copilot.
+Untuk workshop ini akan dicontohkan menggunakan vscode+copilot meskipun dapat juga menggunakan editor lain seperti cursor, windsurf dll. Tentu hasilnya akan berbeda. Bisa jadi hasilnya lebih baik, atau mungkin lebih buruk.
 
-Gunakan prompt plan yang sudah didapat dari bagian sebelumnya untuk mulai melakukan iterasi pengembangan aplikasi. Tidak perlu terlalu terpaku kepada prompt yang sudah disediakan, silakan diubah atau diganti jika kurang sesuai.
+Gunakan /prompt plan/ yang sudah didapat dari bagian sebelumnya untuk mulai melakukan iterasi pengembangan aplikasi. Tidak perlu terlalu terpaku kepada prompt yang sudah disediakan, silakan diubah atau diganti jika kurang sesuai.
 
 Karena prompt dibuat oleh AI juga ada kemungkinan keliru, jadi harap diteliti lebih lanjut.
 
@@ -182,17 +417,61 @@ Untuk copilot sendiri, saat ini ada 3 fitur utama:
 - Copilot Chat yang dapat digunakan untuk diskusi dan bertanya dengan antarmuka chat. Contoh: "jelaskan alur kode dari proyek ini".
 - Copilot Edit mampu memodifikasi satu atau beberapa file sesuai dengan menggunakan instruksi yang diberikan.
 
+Jalankan iterasi satu-per-satu. Jika saat menjalankan sebuah iterasi dibutuhkan penyesuaian, lakukan terlebih dahulu sebelum menuju ke iterasi berikutnya.
+
+TODO Contoh ~spec.md~
+TODO Screenshot salah satu iterasi di vscode
+
 * Mengelola kode dengan AI (15 min)
-- Input: Kode sumber
-- Output: Dokumentasi, kode yang rapi, optimasi, refactor
-- Alat bantu
-    - Copilot
-    - Cursor
-    - Cline
-    - WindSurf
+Setelah proses pengembangan fitur sudah (dianggap) selesai, langkah berikutnya adalah mengelola kode yang sudah dibuat. AI juga dapat membantu proses pengelolaan kode.
+
+** Menambahkan pengujian
+Salah satu faedah penggunaan asisten ngoding berbasis AI adalah untuk menambahkan pengujian atau /testing/ sehingga aplikasi yang kita buat teruji dan mengurangi kesalahan.
+
+Pertama lakukan satu pengujian secara manual, lalu minta AI untuk menambahkan. Berdasarkan pengalaman, kalau kita minta AI bikin pengujian dari nol, kadang justru banyak /ngelantur/. Karenanya, mending kita buatkan satu /test case/ sebagai contoh terus biarkan AI membuatkan kasus-kasus lain.
+
+Teknik ini dalam LLM disebut sebagai /few-shot prompting/. Sederhananya, kita memberi satu atau beberapa contoh untuk kemudian dilanjutkan oleh LLM. Untuk lebih jelasnya bisa [[https://dekontaminasi.substack.com/p/menyundul-llm-dengan-contoh-nyata][ simak artikel berikut ]].
+
+TODO screenshot dari vscode
+
+** Menambahkan dokumentasi
+Sebagai pemrogram, kegiatan menulis dokumentasi terasa berat. Inginnya menulis kode aja kan ya 😬 Nah sekarang kita bisa mendelegasikan tugas menulis dokumentasi kepada AI.
+
+Misalnya kita ingin mendokumentasikan sebuah fungsi. Biasanya kita menggunakan alat seperti JSDoc/JavaDoc/docstring (tergantung bahasa).
+
+TODO screenshot
+
+Apabila hasil dokumentasinya ngaco? Kalaulah asisten ngoding berbasis AI, yang sudah dilatih dengan milyaran baris kode di luar sana, masih nggak paham juga dengan kodingan kita, kira-kira yang ngaco siapa ya? Mungkin ini adalah peringatan dini buat kita bahwa kodingan kita kurang dapat dimengerti dan harus segera diperbaiki atau disederhanakan 😉
+
+** Melakukan perubahan/refactoring
+Ketika proses penulisan kode baik dengan bantuan AI ataupun tidak, fokus awal kita adalah cepat selesai. Coba manual dan yang penting jalan dulu aja. Masalah kodingannya masih belepotan, itu bisa diberesin belakangan. Dan ternyata dengan adanya asisten AI, kegiatan beres-beres ini bisa dipercepat lagi.
+
+Contoh nyata: ada bagian yang diulang-ulang. Sejatinya ini dipisahkan jadi fungsi tersendiri. Pas banget untuk minta bantuan AI!
+
+TODO screenshot
+TODO penjelasannya
+
+Bisa juga untuk meminta bantuan AI untuk mengubah kode kita sehingga menggunakan /Clean Architecture/ misalnya. Atau minta dicek apakah proyek kita sudah cukup jelas, DRY (Don't Repeat Yourself) dan berbagai metode lainnya.
+
+Lebih lanjut, kita pun bisa mengubah teknologi yang kita gunakan atau istilahnya /rewrite/. Misalnya migrasi dari JS ke TS, React+Vite ke Astro, dan seterusnya. Atau yang lebih ekstrim dari Python ke JavaScript, iOS ke Android dan sebagainya.
+
+Saya pernah minta bantuan desain dengan bolt dan v0 lalu kodenya diunduh dan dimasukkan sebagai dokumentasi di proyek yang bukan JavaScript/TypeScript atau NextJS. Lalu kemudian saya minta AI untuk menjadikan aplikasi JS/TS tersebut sebagai sumber untuk membangun aplikasi dengan Elixir dan Phoenix dengan prompt dibawah ini.
+
+#+BEGIN_SRC txt
+I have this TypeScript app in /docs/references/v0. I want you to be able to access the TypeScript app, view the code of it inside the project. I don't want to break anything inside the Phoenix app. Then I want you to analyze the styles within that TypeScript app and apply those styles to our Elixir/Phoenix app
+#+END_SRC
+
+AI juga dapat membantu /onboarding/ karyawan baru dalam memahami basis kode yang cukup besar. Sebagian besar dari kita harus menghadapi proyek yang sudah (setengah) jadi dan kudu diperbaiki sana-sini. Makanya lebih berat untuk modifikasi fitur yang ada, karena harus paham betul yang terjadi di belakang layar (supaya nggak ada yang kesenggol).
 
 * Penutup (10 min)
-- Tantangan
-- Tips dan trik
-- Kesimpulan
-- Diskusi (tanya jawab)
+** Tantangan
+Kalau saat workshop ini terkesan gampang, itu wajar. Karena saya sudah berulang-kali melakukannya. Coba setelah pulang coba lagi dari awal dengan proyek berbeda, saya yakin tidak selancar saat workshop. Apalagi buat yang baru-baru belajar ngoding.
+
+Nah disinilah tantangannya. Pemrogram berpengalaman menggunakan AI untuk mengakselerasi apa yang sudah diketahuinya. AI membantu mengerjakan hal-hal yang sifatnya berulang yang sudah /ngelotok/ dikepala.
+
+Sedangkan teman-teman yang baru belajar biasanya cenderung menggunakan AI untuk menyelesaikan sebuah tugas atau /task/ yang belum pernah dikerjakan sebelumnya. Sehingga terkadang ketika menerima saran berupa kode dari AI, karena belum bisa membedakan solusi yang tepat dengan solusi /ngawur/, bisa saja yang ditambahkan malah kode yang /ngawur/ itu. Hasilnya bisa melebar kemana-mana. Mulai dari /ngebug/, performa aplikasi jadi terganggu, dan akan sulit melakukan /debugging/ kode yang diciptakan AI tadi.
+
+Pastikan teman-teman memahami sepenuhnya kode yang disarankan tersebut sebelum menerima solusinya atau copas ke code editor. Jika kesulitan memahami solusi yang diberikan, tanyakan kembali maksud dari baris kode yang diberikan itu apa. Karena ketika kode sudah masuk kedalam proyek, maka kode buatan AI tadi adalah tanggungjawab kita. Ngga mungkin kan ketika terjadi kesalahan kita menyalahkan AI?!
+
+Gunakan AI untuk membantu kita berfikir dalam menyelesaikan masalah atau tugas, bukan malah menggantikan kita berfikir. Ketika ketemu masalah, pahami masalahnya apa sehingga kita bisa memikirkan solusi yang tepat, bukan hanya sekedar menemukan solusi untuk masalah yang kita belum paham benar. Lebih parah lagi, kita juga tidak mengerti solusi yang diberikan AI itu apa dan bagaimana cara kerjanya.
+
