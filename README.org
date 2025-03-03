@@ -1,6 +1,8 @@
 #+TITLE: Tingkatkan produktivitas ngoding dengan AI
-#+TOC: headlines 3
-* Objektif
+
+* Tingkatkan produktivitas ngoding dengan AI
+
+** Objektif
 Workshop ini bertujuan untuk mengeksplorasi kemampuan teknologi AI dalam mempercepat dan meningkatkan proses pengembangan perangkat lunak. Peserta akan:
 
 1. Memahami berbagai jenis asisten koding berbasis AI dan keunggulannya
@@ -12,22 +14,21 @@ Workshop ini bertujuan untuk mengeksplorasi kemampuan teknologi AI dalam memperc
 
 Peserta akan menyelesaikan satu siklus pengembangan aplikasi lengkap dengan bantuan AI, dari konsep awal hingga implementasi dan penyempurnaan kode.
 
-TODO
-* Prasyarat
+** Prasyarat
 - Instalasi vscode
 - Instalasi copilot
 - Dapat menjalankan NodeJS versi 22 atau yang lebih baru
 
-* Pembuka (10 min)
-** Perkembangan asisten koding
+** Pembuka (10 min)
+*** Perkembangan asisten koding
 
 Dunia pengembangan perangkat lunak telah mengalami transformasi signifikan dalam alat bantu pemrograman. Bermula dari fitur /autocomplete/ sederhana yang hanya menyelesaikan kata kunci atau nama fungsi yang sudah diketahui, kini berkembang menjadi sistem cerdas yang mampu memahami konteks kode secara menyeluruh. Pada era awal, IDE seperti Visual Studio atau Eclipse menawarkan saran secara statis berdasarkan pustaka yang telah didefinisikan, namun memiliki keterbatasan dalam memahami logika.
 
 Kemajuan teknologi kecerdasan buatan, khususnya model bahasa besar (LLM), telah merevolusi asisten koding menjadi alat yang jauh lebih canggih. Asisten koding modern seperti GitHub Copilot, Cursor, ChatGPT, v0, Aider.chat dan lain sebagainya tidak hanya melengkapi baris kode yang sedang ditulis, tetapi juga mampu menghasilkan fungsi lengkap, algoritma kompleks, dan bahkan seluruh modul berdasarkan deskripsi bahasa manusia. Berbeda dengan cara tradisional, asisten berbasis AI memiliki kemampuan memahami pola penulisan kode dalam skala besar, menganalisis struktur proyek secara keseluruhan, dan menyesuaikan saran dengan gaya dari basis kode yang sudah ada. AI dapat memberikan penjelasan, mengusulkan refaktorisasi, mengidentifikasi kesalahan (/bug/) potensial, dan bahkan menghasilkan kode pengujian (/testing/) — kemampuan yang jauh melampaui pencapaian generasi sebelumnya.
 
-** Beberapa jenis asisten koding
+*** Beberapa jenis asisten koding
 
-*** /AI Chatbot/
+**** /AI Chatbot/
 Meski bukan spesifik untuk membantu pemrograman, beberapa AI chatbot dapat digunakan untuk bertanya seputar kode dan pemrograman. Beberapa diantaranya:
 - ChatGPT.com
 - Claude.ai
@@ -37,7 +38,7 @@ Selain untuk meminta saran untuk kode, AI berbasis chatbot seperti ini sangat co
 
 [[./screenshots/claude.png][contoh AI chatbot claude]]
 
-*** /AI Code Completion/
+**** /AI Code Completion/
 Dibawah ini beberapa alat yang dapat membantu untuk melengkapi kode disaat kita sedang menulis kode di editor.
 
 - GitHub Copilot: Asisten koding untuk menghasilkan, melengkapi, dan menyarankan kode secara real-time berdasarkan konteks yang kita berikan. Dapat dijalankan sebagai ekstensi vscode, jetbrains, dan vim.
@@ -47,7 +48,7 @@ Dibawah ini beberapa alat yang dapat membantu untuk melengkapi kode disaat kita 
 
 [[./screenshots/completion.png][contoh code completion dengan vscode]]
 
-*** /AI Code Editor/
+**** /AI Code Editor/
 
 Evolusi berikutnya dari /code completion/. Jika /code completion/ mampu mengerti kode yang sedang dibuka saat itu, maka /AI Code Editor/ mampu memahami proyek secara keseluruhan.
 
@@ -61,7 +62,7 @@ AI yang interintegrasi dengan kode editor. Selain mampu memberi saran terhadap k
 
 [[file:./screenshots/claude-code.jpg][Contoh tampilan Claude Code]]
 
-*** /AI interface builder/
+**** /AI interface builder/
 AI yang spesifik digunakan untuk membangun /user interface/ atau desain. Jika chatbot dapat digunakan untuk apa saja termasuk membangun UI, /AI code completion/ dan /AI code editor/ pun bisa, tapi hasilnya lumayan berbeda. Mungkin karena AI ini menggunakan model yang memang dilatih untuk mengembangkan UI. Ada beberapa alat yang bisa digunakan.
 
 - v0.dev: Generative AI dengan /interface chat/ yang dioptimasi untuk mengembangkan komponen React dan ekosistem Next.
@@ -72,7 +73,7 @@ Berikut contoh tangkapan layar dari v0.
 [[file:./screenshots/v0.png][Tangkapan layar v0]]
 
 
-** Kegiatan ngoding
+*** Kegiatan ngoding
 Di workshop kali ini kita akan menjajal sejauh mana AI bisa membantu kita dalam proses membangun aplikasi dari awal. Ketika ingin membangun aplikasi atau membuat sesuatu, umumnya dimulai dari memikirkan ide yang ingin dieksekusi, menyusun rencana, membangun aplikasi dan fitur hingga mengelola kode yang sudah dikembangkan. Kira-kira seperti ilustrasi dibawah.
 
 #+BEGIN_SRC text
@@ -92,7 +93,7 @@ Di workshop kali ini kita akan menjajal sejauh mana AI bisa membantu kita dalam 
                                         +----------+
 #+END_SRC
 
-* Diskusi ide dengan AI (15 min)
+** Diskusi ide dengan AI (15 min)
 
 Kita bisa memanfaatkan chatbot untuk mendiskusikan ide atau memilih ide yang menarik atau /brainstorming/. Ketika ide sudah didapat, kita dapat kembali menggunakan chatbot untuk mematangkan ide kita.
 
@@ -197,7 +198,7 @@ A web application designed to capture and retrieve user-generated ideas using a 
 
 #+END_SRC
 
-* Menyusun rencana dengan AI (15 min)
+** Menyusun rencana dengan AI (15 min)
 Setelah ide cukup matang, saatnya merencanakan sebelum melakukan eksekusi rencana tersebut. Kita bisa menggunakan spec dari proses pematangan ide diatas untuk kemudian meminta bantuan AI untuk membuat rencana.
 
 Disarankan menggunakan model yang mampu berfikir (lebih panjang) seperti chatgpt o1, deepseek deepthink, atau Qwen Thinking.
@@ -380,7 +381,7 @@ Fix any issues discovered during testing. Once satisfied, prepare the app for de
 
 Setelah rencana dan strategi sudah siap, saatnya eksekusi dan membangun aplikasi.
 
-* Eksekusi menulis kode dengan AI (20 min)
+** Eksekusi menulis kode dengan AI (20 min)
 Dari rencana yang sudah dikembangkan, kita bisa mulai eksekusi. Bisa langsung dengan menggunakan AI Code Editor seperti vscode+copilot, cursor atau yang serupa.
 
 Pengalaman pribadi sejauh ini, jika teknologi yang digunakan butuh integrasi manual, AI akan kesulitan. Contohnya seperti proyect berbasis nodejs dengan backend Express/Hono ditambah database apapun. AI seringkali mengalami kesulitan dalam melakukan setup. Selalu ada saja kesalahan atau /error/ yang seharusnya tidak perlu terjadi.
@@ -391,7 +392,7 @@ Ada beberapa alasan yang menyebabkan hal ini (setidaknya menurut saya pribadi). 
 
 Sehingga menggunakan alat bantu seperti AI UI Generator merupakan cara yang bisa ditempuh.
 
-** Desain antarmuka
+*** Desain antarmuka
 Jika v0 lebih cocok digunakan untuk mendesain komponen, bolt.new dapat kita manfaatkan untuk membangun UI untuk aplikasi frontend. Dari hasil desain frontend ini dapat dilanjutkan untuk mengembangkan backend, menambahkan database dan seterusnya dengan vscode+copilot.
 
 Kita bisa menggunakan informasi di ~spec.md~ yang sudah dibuat sebagai /prompting/ untuk bolt ini.
@@ -421,7 +422,7 @@ Layout: Main page includes a search form with results shown below.
 
 Hasil dari bolt dapat diunduh lalu dijalankan di localhost dan dibuka dengan AI Code Editor pilihan.
 
-** Mengembangka aplikasi
+*** Mengembangka aplikasi
 Untuk workshop ini akan dicontohkan menggunakan vscode+copilot meskipun dapat juga menggunakan editor lain seperti cursor, windsurf dll. Tentu hasilnya akan berbeda. Bisa jadi hasilnya lebih baik, atau mungkin lebih buruk.
 
 Gunakan /prompt plan/ yang sudah didapat dari bagian sebelumnya untuk mulai melakukan iterasi pengembangan aplikasi. Tidak perlu terlalu terpaku kepada prompt yang sudah disediakan, silakan diubah atau diganti jika kurang sesuai.
@@ -437,10 +438,10 @@ Jalankan iterasi satu-per-satu. Jika saat menjalankan sebuah iterasi dibutuhkan 
 
 [[file:./screenshots/contoh-iterasi.png][Contoh saat menjalankan salah satu iterasi di vscode copilot edit]]
 
-* Mengelola kode dengan AI (15 min)
+** Mengelola kode dengan AI (15 min)
 Setelah proses pengembangan fitur sudah (dianggap) selesai, langkah berikutnya adalah mengelola kode yang sudah dibuat. AI juga dapat membantu proses pengelolaan kode.
 
-** Menambahkan pengujian
+*** Menambahkan pengujian
 Salah satu faedah penggunaan asisten ngoding berbasis AI adalah untuk menambahkan pengujian atau /testing/ sehingga aplikasi yang kita buat teruji dan mengurangi kesalahan.
 
 Pertama lakukan satu pengujian secara manual, lalu minta AI untuk menambahkan. Berdasarkan pengalaman, kalau kita minta AI bikin pengujian dari nol, kadang justru banyak /ngelanturnya/. Karenanya, mending kita buatkan satu /test case/ sebagai contoh terus biarkan AI membuatkan kasus-kasus lain.
@@ -449,7 +450,7 @@ Teknik ini dalam LLM disebut sebagai /few-shot prompting/. Sederhananya, kita me
 
 [[file:./screenshots/testing.png][contoh testing]]
 
-** Menambahkan dokumentasi
+*** Menambahkan dokumentasi
 Sebagai pemrogram, kegiatan menulis dokumentasi terasa berat. Inginnya menulis kode aja kan ya 😬 Nah sekarang kita bisa mendelegasikan tugas menulis dokumentasi kepada AI.
 
 Misalnya kita ingin mendokumentasikan sebuah fungsi. Biasanya kita menggunakan alat seperti JSDoc/JavaDoc/docstring (tergantung bahasa).
@@ -458,7 +459,7 @@ Misalnya kita ingin mendokumentasikan sebuah fungsi. Biasanya kita menggunakan a
 
 Apabila hasil dokumentasinya /ngaco/? AI saja yang sudah dilatih dengan milyaran baris kode di luar sana, masih nggak paham juga dengan kodingan kita, kira-kira yang ngaco siapa ya? Mungkin ini adalah peringatan dini buat kita bahwa kodingan kita kurang dapat dimengerti dan harus segera diperbaiki atau disederhanakan 😉
 
-** Melakukan perubahan/refactoring
+*** Melakukan perubahan/refactoring
 Ketika proses penulisan kode baik dengan bantuan AI ataupun tidak, fokus awal kita adalah cepat selesai. Coba manual dan yang penting jalan dulu aja. Masalah kodingannya masih belepotan, itu bisa diberesin belakangan. Dan ternyata dengan adanya asisten AI, kegiatan beres-beres ini bisa dipercepat lagi.
 
 Contoh nyata: kode dijadikan satu file di ~App.tsx~. Sebaiknya dipisah per komponen. Mari kita minta bantuan AI!
@@ -477,8 +478,8 @@ I have this TypeScript app in /docs/references/v0. I want you to be able to acce
 
 AI juga dapat membantu /onboarding/ karyawan baru dalam memahami basis kode yang cukup besar. Sebagian besar dari kita harus menghadapi proyek yang sudah (setengah) jadi dan kudu diperbaiki sana-sini. Makanya lebih berat untuk modifikasi fitur yang ada, karena harus paham betul yang terjadi di belakang layar (supaya nggak ada yang kesenggol).
 
-* Penutup (10 min)
-** Tantangan
+** Penutup (10 min)
+*** Tantangan
 Kalau saat workshop ini terkesan gampang, itu wajar. Karena saya sudah berulang-kali melakukannya. Coba setelah pulang coba lagi dari awal dengan proyek berbeda, saya yakin tidak selancar saat workshop. Apalagi buat yang baru-baru belajar ngoding.
 
 Nah disinilah tantangannya. Pemrogram berpengalaman menggunakan AI untuk mengakselerasi apa yang sudah diketahuinya. AI membantu mengerjakan hal-hal yang sifatnya berulang yang sudah /ngelotok/ dikepala.
@@ -489,5 +490,5 @@ Pastikan teman-teman memahami sepenuhnya kode yang disarankan tersebut sebelum m
 
 Gunakan AI untuk membantu kita berfikir dalam menyelesaikan masalah atau tugas, bukan malah menggantikan kita berfikir. Ketika ketemu masalah, pahami masalahnya apa sehingga kita bisa memikirkan solusi yang tepat, bukan hanya sekedar menemukan solusi untuk masalah yang kita belum paham benar. Lebih parah lagi, kita juga tidak mengerti solusi yang diberikan AI itu apa dan bagaimana cara kerjanya.
 
-** Referensi selanjutnya
+*** Referensi selanjutnya
 TODO
