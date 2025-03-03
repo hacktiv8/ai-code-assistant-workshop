@@ -1,6 +1,5 @@
 #+TITLE: Tingkatkan produktivitas ngoding dengan AI
-
-* Tingkatkan produktivitas ngoding dengan AI
+#+TOC: headlines 3
 
 ** Objektif
 Workshop ini bertujuan untuk mengeksplorasi kemampuan teknologi AI dalam mempercepat dan meningkatkan proses pengembangan perangkat lunak. Peserta akan:
@@ -438,45 +437,48 @@ Jalankan iterasi satu-per-satu. Jika saat menjalankan sebuah iterasi dibutuhkan 
 
 [[file:./screenshots/contoh-iterasi.png]]
 
-** Mengelola kode dengan AI (15 min)
-Setelah proses pengembangan fitur sudah (dianggap) selesai, langkah berikutnya adalah mengelola kode yang sudah dibuat. AI juga dapat membantu proses pengelolaan kode.
+** Mengelola Kode dengan AI (15 min)
+Setelah proses pengembangan fitur sudah (dianggap) selesai, saatnya beralih ke tahap pengelolaan kode. Pada tahap ini, AI juga dapat menjadi partner yang sangat membantu untuk meningkatkan kualitas kode yang telah dibuat.
 
-*** Menambahkan pengujian
-Salah satu faedah penggunaan asisten ngoding berbasis AI adalah untuk menambahkan pengujian atau /testing/ sehingga aplikasi yang kita buat teruji dan mengurangi kesalahan.
+*** Menambahkan Pengujian Otomatis
+Salah satu manfaat penting dari asisten koding berbasis AI adalah kemampuannya untuk membantu membuat pengujian (testing). Dengan adanya pengujian yang baik, aplikasi yang kita kembangkan akan lebih tangguh dan minim kesalahan.
 
-Pertama lakukan satu pengujian secara manual, lalu minta AI untuk menambahkan. Berdasarkan pengalaman, kalau kita minta AI bikin pengujian dari nol, kadang justru banyak /ngelanturnya/. Karenanya, mending kita buatkan satu /test case/ sebagai contoh terus biarkan AI membuatkan kasus-kasus lain.
+Strategi yang efektif saat bekerja dengan AI untuk membuat pengujian adalah dengan menerapkan pendekatan kolaboratif. Buatlah satu kasus uji (/test case/) secara manual terlebih dahulu, kemudian minta AI untuk mengembangkan kasus-kasus uji tambahan berdasarkan contoh tersebut. Pengalaman menunjukkan bahwa jika kita meminta AI membuat pengujian tanpa contoh sama sekali, hasilnya seringkali kurang relevan dengan kode spesifik yang kita miliki.
 
-Teknik ini dalam LLM disebut sebagai /few-shot prompting/. Sederhananya, kita memberi satu atau beberapa contoh untuk kemudian dilanjutkan oleh LLM. Untuk lebih jelasnya bisa [[https://dekontaminasi.substack.com/p/menyundul-llm-dengan-contoh-nyata][ simak artikel berikut ]].
+Pendekatan ini dalam dunia LLM dikenal dengan istilah /few-shot prompting/ – teknik di mana kita memberikan satu atau beberapa contoh konkret agar AI dapat "belajar" dari pola tersebut dan menghasilkan konten serupa dengan kualitas yang lebih baik. Untuk penjelasan lebih mendalam tentang teknik ini, [[https://dekontaminasi.substack.com/p/menyundul-llm-dengan-contoh-nyata][teman-teman dapat membaca artikel ini]]. 
 
 [[file:./screenshots/testing.png]]
 
-*** Menambahkan dokumentasi
-Sebagai pemrogram, kegiatan menulis dokumentasi terasa berat. Inginnya menulis kode aja kan ya 😬 Nah sekarang kita bisa mendelegasikan tugas menulis dokumentasi kepada AI.
+*** Mendokumentasikan Kode
+Sebagai seorang developer, menulis dokumentasi seringkali terasa seperti beban tambahan. Lebih menyenangkan rasanya fokus pada penulisan kode daripada menjelaskan cara kerjanya, bukan?! 😬 Di sinilah AI dapat mengambil alih tugas dokumentasi yang sering kali terbengkalai.
 
-Misalnya kita ingin mendokumentasikan sebuah fungsi. Biasanya kita menggunakan alat seperti JSDoc/JavaDoc/docstring (tergantung bahasa).
+Misalnya, untuk mendokumentasikan sebuah fungsi, biasanya kita menggunakan format standar seperti JSDoc (JavaScript), JavaDoc (Java), docstring (Python) atau format lainnya sesuai bahasa. AI dapat dengan cepat menganalisis kode kita dan menghasilkan dokumentasi yang komprehensif dalam format yang sesuai.
 
 [[file:./screenshots/jsdoc.png]]
 
-Apabila hasil dokumentasinya /ngaco/? AI saja yang sudah dilatih dengan milyaran baris kode di luar sana, masih nggak paham juga dengan kodingan kita, kira-kira yang ngaco siapa ya? Mungkin ini adalah peringatan dini buat kita bahwa kodingan kita kurang dapat dimengerti dan harus segera diperbaiki atau disederhanakan 😉
+Yang menarik, jika AI menghasilkan dokumentasi yang kurang tepat atau terkesan "ngawur", ini bisa menjadi sinyal berharga. Jika asisten AI yang sudah dilatih dengan miliaran baris kode masih kesulitan memahami logika kode kita, kemungkinan besar kode tersebut memang kurang jelas atau terlalu kompleks. Anggap saja ini sebagai peringatan dini bahwa kode kita perlu disederhanakan.
 
-*** Melakukan perubahan/refactoring
-Ketika proses penulisan kode baik dengan bantuan AI ataupun tidak, fokus awal kita adalah cepat selesai. Coba manual dan yang penting jalan dulu aja. Masalah kodingannya masih belepotan, itu bisa diberesin belakangan. Dan ternyata dengan adanya asisten AI, kegiatan beres-beres ini bisa dipercepat lagi.
+*** Melakukan Refactoring 
+Saat menulis kode, prioritas utama kita biasanya adalah membuat fitur berfungsi dengan benar. Filosofi "yang penting jalan dulu" sering diterapkan dengan rencana untuk merapikan kode di kemudian hari. Dengan adanya asisten AI, proses "beres-beres" ini menjadi jauh lebih efisien.
 
-Contoh nyata: kode dijadikan satu file di ~App.tsx~. Sebaiknya dipisah per komponen. Mari kita minta bantuan AI!
+Contoh sederhana: saat semua kode terkumpul dalam satu file seperti App.tsx, kita dapat meminta AI untuk memecahnya menjadi komponen-komponen terpisah yang lebih terorganisir.
 
 [[file:./screenshots/refactor.png]]
 
-Bisa juga untuk meminta bantuan AI untuk mengubah kode kita sehingga menggunakan /Clean Architecture/ misalnya. Atau minta dicek apakah proyek kita sudah cukup jelas, DRY (Don't Repeat Yourself) dan berbagai metode lainnya.
+Lebih dari itu, AI juga dapat membantu transformasi kode yang lebih kompleks, seperti:
 
-Lebih lanjut, kita pun bisa mengubah teknologi yang kita gunakan atau istilahnya /rewrite/. Misalnya migrasi dari JS ke TS, React+Vite ke Astro, dan seterusnya. Atau yang lebih ekstrim dari Python ke JavaScript, iOS ke Android dan sebagainya.
+- Menerapkan prinsip Clean Architecture
+- Memeriksa apakah kode sudah menerapkan prinsip DRY (Don't Repeat Yourself)
+- Mengidentifikasi potensi masalah performa atau keamanan
+- Melakukan migrasi antar teknologi (rewrite), misalnya dari JavaScript ke TypeScript, React+Vite ke Astro, atau bahkan transformasi lebih radikal seperti dari Python ke JavaScript atau iOS ke Android
 
-Saya pernah minta bantuan desain dengan bolt dan v0 lalu kodenya diunduh dan dimasukkan sebagai dokumentasi di proyek yang bukan JavaScript/TypeScript atau NextJS. Lalu kemudian saya minta AI untuk menjadikan aplikasi JS/TS tersebut sebagai sumber untuk membangun aplikasi dengan Elixir dan Phoenix dengan prompt dibawah ini.
+Pengalaman pribadi saya, pernah meminta bantuan desain melalui bolt dan v0, kemudian mengunduh kodenya sebagai referensi untuk proyek non-JavaScript/TypeScript. Selanjutnya, saya meminta AI untuk menganalisis gaya dari aplikasi tersebut dan menerapkannya ke aplikasi Elixir/Phoenix dengan /prompt/ sederhana:
 
 #+BEGIN_SRC txt
 I have this TypeScript app in /docs/references/v0. I want you to be able to access the TypeScript app, view the code of it inside the project. I don't want to break anything inside the Phoenix app. Then I want you to analyze the styles within that TypeScript app and apply those styles to our Elixir/Phoenix app
 #+END_SRC
 
-AI juga dapat membantu /onboarding/ karyawan baru dalam memahami basis kode yang cukup besar. Sebagian besar dari kita harus menghadapi proyek yang sudah (setengah) jadi dan kudu diperbaiki sana-sini. Makanya lebih berat untuk modifikasi fitur yang ada, karena harus paham betul yang terjadi di belakang layar (supaya nggak ada yang kesenggol).
+Selain membantu pengembangan dan perbaikan kode, AI juga sangat berguna untuk proses /onboarding/ anggota tim baru. Saat menghadapi basis kode yang besar dan kompleks, AI dapat membantu menjelaskan struktur, logika, dan keputusan arsitektural yang mendasari proyek tersebut. Ini sangat berharga, terutama saat kita bergabung dengan proyek yang sudah berjalan dan perlu memahami sistem secara menyeluruh sebelum melakukan modifikasi.
 
 ** Penutup (10 min)
 *** Tantangan
@@ -491,4 +493,4 @@ Pastikan teman-teman memahami sepenuhnya kode yang disarankan tersebut sebelum m
 Gunakan AI untuk membantu kita berfikir dalam menyelesaikan masalah atau tugas, bukan malah menggantikan kita berfikir. Ketika ketemu masalah, pahami masalahnya apa sehingga kita bisa memikirkan solusi yang tepat, bukan hanya sekedar menemukan solusi untuk masalah yang kita belum paham benar. Lebih parah lagi, kita juga tidak mengerti solusi yang diberikan AI itu apa dan bagaimana cara kerjanya.
 
 *** Referensi selanjutnya
-TODO
+- [[Kumpulan artikel menarik seputar AI dan LLM dalam Bahasa Indonesia][https://dekontaminasi.substack.com]]
