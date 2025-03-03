@@ -1,9 +1,14 @@
 #+TITLE: Tingkatkan produktifitas ngoding dengan AI
 #+TOC: headlines 3
 * Objektif
+Di workshop kali ini kita akan menjajal sejauh mana AI bisa membantu kita dalam proses membangun aplikasi dari awal.
+
+TODO
 * Prasyarat
 - Instalasi vscode
 - Instalasi copilot
+
+TODO
 * Pembuka (10 min)
 ** Perkembangan asisten koding
 
@@ -21,7 +26,7 @@ Meski bukan spesifik untuk membantu pemrograman, beberapa AI chatbot dapat digun
 
 Selain untuk meminta saran untuk kode, AI berbasis chatbot seperti ini sangat cocok untuk diskusi atau /brainstorming/.
 
-[[file:/Users/riza/code/ai-coding-assistant-workshop/screenshots/claude.png][contoh AI chatbot claude]]
+[[./screenshots/claude.png][contoh AI chatbot claude]]
 
 *** /AI Code Completion/
 Dibawah ini beberapa alat yang dapat membantu untuk melengkapi kode disaat kita sedang menulis kode di editor.
@@ -31,7 +36,7 @@ Dibawah ini beberapa alat yang dapat membantu untuk melengkapi kode disaat kita 
 - Supermaven: Dikenal sangat cepat dalam /code generation/ yang dapat digunakan di berbagai kode editor seperti vscode, vim, zed, dll.
 - Codeium: Ekstensi vscode /open-source/ yang dapat digunakan secara gratis untuk penggunaan personal.
 
-[[file:/Users/riza/code/ai-coding-assistant-workshop/screenshots/completion.png][contoh code completion dengan vscode]]
+[[./screenshots/completion.png][contoh code completion dengan vscode]]
 
 *** /AI Code Editor/
 
@@ -45,15 +50,17 @@ AI yang interintegrasi dengan kode editor. Selain mampu memberi saran terhadap k
 - Trae: Fork dari vscode punya ByteDance. Dapat digunakan secara gratis
 - Aider, Claude Code: Menggunakan antarmuka teks (/cli/), dapat digunakan dengan editor kode apapun.
 
+[[file:./screenshots/claude-code.jpg][Contoh tampilan Claude Code]]
+
 *** /AI interface builder/
 AI yang spesifik digunakan untuk membangun /user interface/ atau desain. Jika chatbot dapat digunakan untuk apa saja termasuk membangun UI, /AI code completion/ dan /AI code editor/ pun bisa, tapi hasilnya lumayan berbeda. Mungkin karena AI ini menggunakan model yang memang dilatih untuk mengembangkan UI. Ada beberapa alat yang bisa digunakan.
 
 - v0.dev: Generative AI dengan /interface chat/ yang dioptimasi untuk mengembangkan komponen React dan ekosistem Next.
 - bolt.new: Generative AI dengan /interface chat/ untuk mengembangkan aplikasi frontend.
-- lovable.dev: Aplikasi yang mampu membuat aplikasi fullstack.
+- lovable.dev: Aplikasi yang mampu membuat aplikasi fullstack. Cocok untuk konversi desain figma menjadi kode.
 
 Berikut contoh tangkapan layar dari v0.
-[[file:/Users/riza/code/ai-coding-assistant-workshop/screenshots/v0.png][Tangkapan layar v0]]
+[[file:./screenshots/v0.png][Tangkapan layar v0]]
 
 
 ** Kegiatan ngoding
@@ -99,7 +106,7 @@ Contoh ide:
 I want to develop a platform to store my ideas in one place.
 #+END_SRC
 
-[[file:/Users/riza/code/ai-coding-assistant-workshop/screenshots/claude.png][Contoh brainstorming ide dengan claude]]
+[[file:./screenshots/claude.png][Contoh brainstorming ide dengan claude]]
 
 Setelah berdiskusi dengan AI Chatbot, hasil diskusi dikemas dalam format spesifikasi aplikasi atau spec.
 
@@ -186,7 +193,7 @@ Setelah ide cukup matang, saatnya merencanakan sebelum melakukan eksekusi rencan
 
 Disarankan menggunakan model yang mampu berfikir (lebih panjang) seperti chatgpt o1, deepseek deepthink, atau Qwen Thinking.
 
-[[file:/Users/riza/code/ai-coding-assistant-workshop/screenshots/deepseek-r1.png][Mengaktifkan fitur berfikir panjang di deepseek]]
+[[file:./screenshots/deepseek-r1.png][Mengaktifkan fitur berfikir panjang di deepseek]]
 
 #+BEGIN_SRC text
 Draft a detailed, step-by-step blueprint for building this
@@ -419,8 +426,7 @@ Untuk copilot sendiri, saat ini ada 3 fitur utama:
 
 Jalankan iterasi satu-per-satu. Jika saat menjalankan sebuah iterasi dibutuhkan penyesuaian, lakukan terlebih dahulu sebelum menuju ke iterasi berikutnya.
 
-TODO Contoh ~spec.md~
-TODO Screenshot salah satu iterasi di vscode
+[[file:./screenshots/contoh-iterasi.png][Contoh saat menjalankan salah satu iterasi di vscode copilot edit]]
 
 * Mengelola kode dengan AI (15 min)
 Setelah proses pengembangan fitur sudah (dianggap) selesai, langkah berikutnya adalah mengelola kode yang sudah dibuat. AI juga dapat membantu proses pengelolaan kode.
@@ -428,7 +434,7 @@ Setelah proses pengembangan fitur sudah (dianggap) selesai, langkah berikutnya a
 ** Menambahkan pengujian
 Salah satu faedah penggunaan asisten ngoding berbasis AI adalah untuk menambahkan pengujian atau /testing/ sehingga aplikasi yang kita buat teruji dan mengurangi kesalahan.
 
-Pertama lakukan satu pengujian secara manual, lalu minta AI untuk menambahkan. Berdasarkan pengalaman, kalau kita minta AI bikin pengujian dari nol, kadang justru banyak /ngelantur/. Karenanya, mending kita buatkan satu /test case/ sebagai contoh terus biarkan AI membuatkan kasus-kasus lain.
+Pertama lakukan satu pengujian secara manual, lalu minta AI untuk menambahkan. Berdasarkan pengalaman, kalau kita minta AI bikin pengujian dari nol, kadang justru banyak /ngelanturnya/. Karenanya, mending kita buatkan satu /test case/ sebagai contoh terus biarkan AI membuatkan kasus-kasus lain.
 
 Teknik ini dalam LLM disebut sebagai /few-shot prompting/. Sederhananya, kita memberi satu atau beberapa contoh untuk kemudian dilanjutkan oleh LLM. Untuk lebih jelasnya bisa [[https://dekontaminasi.substack.com/p/menyundul-llm-dengan-contoh-nyata][ simak artikel berikut ]].
 
@@ -475,3 +481,5 @@ Pastikan teman-teman memahami sepenuhnya kode yang disarankan tersebut sebelum m
 
 Gunakan AI untuk membantu kita berfikir dalam menyelesaikan masalah atau tugas, bukan malah menggantikan kita berfikir. Ketika ketemu masalah, pahami masalahnya apa sehingga kita bisa memikirkan solusi yang tepat, bukan hanya sekedar menemukan solusi untuk masalah yang kita belum paham benar. Lebih parah lagi, kita juga tidak mengerti solusi yang diberikan AI itu apa dan bagaimana cara kerjanya.
 
+
+** Referensi selanjutnya
