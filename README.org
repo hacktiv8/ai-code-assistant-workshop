@@ -1,14 +1,23 @@
-#+TITLE: Tingkatkan produktifitas ngoding dengan AI
+#+TITLE: Tingkatkan produktivitas ngoding dengan AI
 #+TOC: headlines 3
 * Objektif
-Di workshop kali ini kita akan menjajal sejauh mana AI bisa membantu kita dalam proses membangun aplikasi dari awal.
+Workshop ini bertujuan untuk mengeksplorasi kemampuan teknologi AI dalam mempercepat dan meningkatkan proses pengembangan perangkat lunak. Peserta akan:
+
+1. Memahami berbagai jenis asisten koding berbasis AI dan keunggulannya
+2. Menggunakan AI untuk mendiskusikan dan mematangkan ide aplikasi
+3. Memanfaatkan AI untuk menyusun rencana pengembangan yang sistematis
+4. Mengimplementasikan kode dengan bantuan AI Code Editor dan AI UI Generator
+5. Mempelajari teknik pengelolaan kode menggunakan AI (testing, dokumentasi, refactoring)
+6. Mengidentifikasi keterbatasan dan praktik terbaik saat bekerja dengan asisten koding
+
+Peserta akan menyelesaikan satu siklus pengembangan aplikasi lengkap dengan bantuan AI, dari konsep awal hingga implementasi dan penyempurnaan kode.
 
 TODO
 * Prasyarat
 - Instalasi vscode
 - Instalasi copilot
+- Dapat menjalankan NodeJS versi 22 atau yang lebih baru
 
-TODO
 * Pembuka (10 min)
 ** Perkembangan asisten koding
 
@@ -119,7 +128,7 @@ error handling strategies, and a testing plan so
 a developer can immediately begin implementation.
 #+END_SRC
 
-Hasilnya bisa disimpan kedalam dokumen teks seperti ~spec.md~ misalnya. Berikut contoh spesifikasi yang dihasilkan oleh ChatGPT.
+Hasilnya bisa disimpan ke dalam dokumen teks seperti ~spec.md~ misalnya. Berikut contoh spesifikasi yang dihasilkan oleh ChatGPT.
 
 #+BEGIN_SRC markdown
 # Idea Storage Web App Specification
@@ -223,7 +232,7 @@ as well.
 <SPEC>
 #+END_SRC
 
-/Prompt/ diatas menghasilkan rencana eksekusi dan tiap iterasi dilengkapi dengan prompting yang sesuai yang nantinya akan kita gunakan sebagai perintah di AI Code Editor. Hasil dari /prompt/ diatas bisa disimpan kedalam sebuah file untuk nantinya digunakan. Jangan lupa dibaca perlahan dan lakukan perubahan jika diperlukan. AI punya sifat dasar halusinasi.
+/Prompt/ diatas menghasilkan rencana eksekusi dan tiap iterasi dilengkapi dengan prompting yang sesuai yang nantinya akan kita gunakan sebagai perintah di AI Code Editor. Hasil dari /prompt/ diatas bisa disimpan kedalam sebuah file untuk nantinya digunakan. Jangan lupa, dibaca perlahan dan lakukan perubahan jika diperlukan. AI punya sifat dasar halusinasi.
 
 Berikut contoh dokumen yang dihasilkan oleh AI Chatbot dengan fitur reasoning. Contoh dibawah ini menggunakan ChatGPT.
 
@@ -374,7 +383,7 @@ Setelah rencana dan strategi sudah siap, saatnya eksekusi dan membangun aplikasi
 * Eksekusi menulis kode dengan AI (20 min)
 Dari rencana yang sudah dikembangkan, kita bisa mulai eksekusi. Bisa langsung dengan menggunakan AI Code Editor seperti vscode+copilot, cursor atau yang serupa.
 
-Pengalaman pribadi sejauh ini, jika teknologi yang digunakan butuh integrasi manual seperti project berbasis nodejs dengan backend Express/Hono ditambah database apapun, seringkali mengalami kesulitan. Selalu ada saja kesalahan atau /error/ yang seharusnya tidak perlu terjadi.
+Pengalaman pribadi sejauh ini, jika teknologi yang digunakan butuh integrasi manual, AI akan kesulitan. Contohnya seperti proyect berbasis nodejs dengan backend Express/Hono ditambah database apapun. AI seringkali mengalami kesulitan dalam melakukan setup. Selalu ada saja kesalahan atau /error/ yang seharusnya tidak perlu terjadi.
 
 Menggunakan /project boilerplate/ yang sudah mengintegrasikan berbagai hal berbeda sepertinya lebih cocok. Atau sekalian menggunakan fullstack framework seperti Elixir Phoenix, Ruby on Rails atau Laravel. Adonis bisa menjadi alternatif, tapi saya pribadi belum mencobanya.
 
@@ -438,24 +447,23 @@ Pertama lakukan satu pengujian secara manual, lalu minta AI untuk menambahkan. B
 
 Teknik ini dalam LLM disebut sebagai /few-shot prompting/. Sederhananya, kita memberi satu atau beberapa contoh untuk kemudian dilanjutkan oleh LLM. Untuk lebih jelasnya bisa [[https://dekontaminasi.substack.com/p/menyundul-llm-dengan-contoh-nyata][ simak artikel berikut ]].
 
-TODO screenshot dari vscode
+[[file:./screenshots/testing.png][contoh testing]]
 
 ** Menambahkan dokumentasi
 Sebagai pemrogram, kegiatan menulis dokumentasi terasa berat. Inginnya menulis kode aja kan ya 😬 Nah sekarang kita bisa mendelegasikan tugas menulis dokumentasi kepada AI.
 
 Misalnya kita ingin mendokumentasikan sebuah fungsi. Biasanya kita menggunakan alat seperti JSDoc/JavaDoc/docstring (tergantung bahasa).
 
-TODO screenshot
+[[file:./screenshots/jsdoc.png][Menambahkan dokumentasi kode]]
 
-Apabila hasil dokumentasinya ngaco? Kalaulah asisten ngoding berbasis AI, yang sudah dilatih dengan milyaran baris kode di luar sana, masih nggak paham juga dengan kodingan kita, kira-kira yang ngaco siapa ya? Mungkin ini adalah peringatan dini buat kita bahwa kodingan kita kurang dapat dimengerti dan harus segera diperbaiki atau disederhanakan 😉
+Apabila hasil dokumentasinya /ngaco/? AI saja yang sudah dilatih dengan milyaran baris kode di luar sana, masih nggak paham juga dengan kodingan kita, kira-kira yang ngaco siapa ya? Mungkin ini adalah peringatan dini buat kita bahwa kodingan kita kurang dapat dimengerti dan harus segera diperbaiki atau disederhanakan 😉
 
 ** Melakukan perubahan/refactoring
 Ketika proses penulisan kode baik dengan bantuan AI ataupun tidak, fokus awal kita adalah cepat selesai. Coba manual dan yang penting jalan dulu aja. Masalah kodingannya masih belepotan, itu bisa diberesin belakangan. Dan ternyata dengan adanya asisten AI, kegiatan beres-beres ini bisa dipercepat lagi.
 
-Contoh nyata: ada bagian yang diulang-ulang. Sejatinya ini dipisahkan jadi fungsi tersendiri. Pas banget untuk minta bantuan AI!
+Contoh nyata: kode dijadikan satu file di ~App.tsx~. Sebaiknya dipisah per komponen. Mari kita minta bantuan AI!
 
-TODO screenshot
-TODO penjelasannya
+[[file:./screenshots/refactor.png][Minta bantuan AI untuk refactor]]
 
 Bisa juga untuk meminta bantuan AI untuk mengubah kode kita sehingga menggunakan /Clean Architecture/ misalnya. Atau minta dicek apakah proyek kita sudah cukup jelas, DRY (Don't Repeat Yourself) dan berbagai metode lainnya.
 
@@ -477,9 +485,9 @@ Nah disinilah tantangannya. Pemrogram berpengalaman menggunakan AI untuk mengaks
 
 Sedangkan teman-teman yang baru belajar biasanya cenderung menggunakan AI untuk menyelesaikan sebuah tugas atau /task/ yang belum pernah dikerjakan sebelumnya. Sehingga terkadang ketika menerima saran berupa kode dari AI, karena belum bisa membedakan solusi yang tepat dengan solusi /ngawur/, bisa saja yang ditambahkan malah kode yang /ngawur/ itu. Hasilnya bisa melebar kemana-mana. Mulai dari /ngebug/, performa aplikasi jadi terganggu, dan akan sulit melakukan /debugging/ kode yang diciptakan AI tadi.
 
-Pastikan teman-teman memahami sepenuhnya kode yang disarankan tersebut sebelum menerima solusinya atau copas ke code editor. Jika kesulitan memahami solusi yang diberikan, tanyakan kembali maksud dari baris kode yang diberikan itu apa. Karena ketika kode sudah masuk kedalam proyek, maka kode buatan AI tadi adalah tanggungjawab kita. Ngga mungkin kan ketika terjadi kesalahan kita menyalahkan AI?!
+Pastikan teman-teman memahami sepenuhnya kode yang disarankan tersebut sebelum menerima solusinya atau copy-paste ke code editor. Jika kesulitan memahami solusi yang diberikan, tanyakan kembali maksud dari baris kode yang diberikan itu apa. Karena ketika kode sudah masuk kedalam proyek, maka kode buatan AI tadi adalah tanggungjawab kita. Ngga mungkin kan ketika terjadi kesalahan kita menyalahkan AI?!
 
 Gunakan AI untuk membantu kita berfikir dalam menyelesaikan masalah atau tugas, bukan malah menggantikan kita berfikir. Ketika ketemu masalah, pahami masalahnya apa sehingga kita bisa memikirkan solusi yang tepat, bukan hanya sekedar menemukan solusi untuk masalah yang kita belum paham benar. Lebih parah lagi, kita juga tidak mengerti solusi yang diberikan AI itu apa dan bagaimana cara kerjanya.
 
-
 ** Referensi selanjutnya
+TODO
