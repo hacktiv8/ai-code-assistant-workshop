@@ -492,5 +492,10 @@ Pastikan teman-teman memahami sepenuhnya kode yang disarankan tersebut sebelum m
 
 Gunakan AI untuk membantu kita berfikir dalam menyelesaikan masalah atau tugas, bukan malah menggantikan kita berfikir. Ketika ketemu masalah, pahami masalahnya apa sehingga kita bisa memikirkan solusi yang tepat, bukan hanya sekedar menemukan solusi untuk masalah yang kita belum paham benar. Lebih parah lagi, kita juga tidak mengerti solusi yang diberikan AI itu apa dan bagaimana cara kerjanya.
 
+*** Tips
+Menggunakan AI untuk membangun aplikasi atau mengembangkan fitur, akan lebih efektif dengan menggunakan format dokumen seperti spec, PRD, dll dibandingkan format percakapan atau chat. Hal ini juga sempat dibahas di [[https://danieldelaney.net/chat][artikel yang satu ini]].
+
 *** Referensi selanjutnya
 - [[Kumpulan artikel menarik seputar AI dan LLM dalam Bahasa Indonesia][https://dekontaminasi.substack.com]]
+- https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/
+- https://danieldelaney.net/chat
