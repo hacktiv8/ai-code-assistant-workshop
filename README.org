@@ -1,5 +1,20 @@
 #+TITLE: Tingkatkan produktivitas ngoding dengan AI
+#+OPTIONS: toc:t
 #+TOC: headlines 3
+
+* Daftar Isi :TOC:
+:PROPERTIES:
+:TOC:      this
+:END:
+
+  - [[#objektif][Objektif]]
+  - [[#prasyarat][Prasyarat]]
+  - [[#pembuka-10-min][Pembuka (10 min)]]
+  - [[#diskusi-ide-dengan-ai-15-min][Diskusi ide dengan AI (15 min)]]
+  - [[#menyusun-rencana-dengan-ai-15-min][Menyusun rencana dengan AI (15 min)]]
+  - [[#eksekusi-menulis-kode-dengan-ai-20-min][Eksekusi menulis kode dengan AI (20 min)]]
+  - [[#mengelola-kode-dengan-ai-15-min][Mengelola Kode dengan AI (15 min)]]
+  - [[#penutup-10-min][Penutup (10 min)]]
 
 ** Objektif
 Workshop ini bertujuan untuk mengeksplorasi kemampuan teknologi AI dalam mempercepat dan meningkatkan proses pengembangan perangkat lunak. Peserta akan:
