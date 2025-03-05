@@ -29,9 +29,13 @@ Workshop ini bertujuan untuk mengeksplorasi kemampuan teknologi AI dalam memperc
 Peserta akan menyelesaikan satu siklus pengembangan aplikasi lengkap dengan bantuan AI, dari konsep awal hingga implementasi dan penyempurnaan kode.
 
 *** Prasyarat
-- Instalasi [[https://code.visualstudio.com/][vscode]]
-- Instalasi ekstensi copilot
 - Dapat menjalankan [[https://nodejs.org/en][NodeJS versi 22]] atau yang lebih baru
+- Instalasi [[https://code.visualstudio.com/][vscode]]
+- Instalasi ekstensi Copilot dan Copilot Chat buatan GitHub
+- Punya akun [[https://github.com][GitHub]] dan login vscode+copilot (ekstensi) dengan akun GitHub
+
+[[file:./screenshots/prasyarat.png]]
+
 
 *** /Disclaimer/
 Hasil yang dihasilkan workshop saat ini bisa saja berbeda jika dijalankan ulang bahkan dengan instruksi yang benar-benar sama. Karena semua AI bersifat non-deterministik, artinya AI bisa saja memberi respon berbeda-beda meski pertanyaan atau pernyataan yang diberikan benar-benar sama.
