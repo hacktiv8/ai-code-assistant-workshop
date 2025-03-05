@@ -7,38 +7,41 @@
 :TOC:      this
 :END:
 
-  - [[#objektif][Objektif]]
-  - [[#prasyarat][Prasyarat]]
-  - [[#pembuka-10-min][Pembuka (10 min)]]
-  - [[#diskusi-ide-dengan-ai-15-min][Diskusi ide dengan AI (15 min)]]
-  - [[#menyusun-rencana-dengan-ai-15-min][Menyusun rencana dengan AI (15 min)]]
-  - [[#eksekusi-menulis-kode-dengan-ai-20-min][Eksekusi menulis kode dengan AI (20 min)]]
-  - [[#mengelola-kode-dengan-ai-15-min][Mengelola Kode dengan AI (15 min)]]
-  - [[#penutup-10-min][Penutup (10 min)]]
+  - [[#pembuka-5-menit][Pembuka (5 menit)]]
+  - [[#tentang-asisten-koding-10-menit][Tentang asisten koding (10 menit)]]
+  - [[#diskusi-ide-dengan-ai-15-menit][Diskusi ide dengan AI (15 menit)]]
+  - [[#menyusun-rencana-dengan-ai-15-menit][Menyusun rencana dengan AI (15 menit)]]
+  - [[#eksekusi-menulis-kode-dengan-ai-20-menit][Eksekusi menulis kode dengan AI (20 menit)]]
+  - [[#mengelola-kode-dengan-ai-15-menit][Mengelola Kode dengan AI (15 menit)]]
+  - [[#diskusi-dan-penutup-10-menit][Diskusi dan Penutup (10 menit)]]
 
-** Objektif
+** Pembuka (5 menit)
+*** Objektif
 Workshop ini bertujuan untuk mengeksplorasi kemampuan teknologi AI dalam mempercepat dan meningkatkan proses pengembangan perangkat lunak. Peserta akan:
 
 1. Memahami berbagai jenis asisten koding berbasis AI dan keunggulannya
 2. Menggunakan AI untuk mendiskusikan dan mematangkan ide aplikasi
 3. Memanfaatkan AI untuk menyusun rencana pengembangan yang sistematis
 4. Mengimplementasikan kode dengan bantuan AI Code Editor dan AI UI Generator
-5. Mempelajari teknik pengelolaan kode menggunakan AI (testing, dokumentasi, refactoring)
+5. Mempelajari teknik pengelolaan kode menggunakan AI (/testing/, dokumentasi, /refactoring/)
 6. Mengidentifikasi keterbatasan dan praktik terbaik saat bekerja dengan asisten koding
 
 Peserta akan menyelesaikan satu siklus pengembangan aplikasi lengkap dengan bantuan AI, dari konsep awal hingga implementasi dan penyempurnaan kode.
 
-** Prasyarat
-- Instalasi vscode
-- Instalasi copilot
-- Dapat menjalankan NodeJS versi 22 atau yang lebih baru
+*** Prasyarat
+- Instalasi [[https://code.visualstudio.com/][vscode]]
+- Instalasi ekstensi copilot
+- Dapat menjalankan [[https://nodejs.org/en][NodeJS versi 22]] atau yang lebih baru
 
-** Pembuka (10 min)
+*** /Disclaimer/
+Hasil yang dihasilkan workshop saat ini bisa saja berbeda jika dijalankan ulang bahkan dengan instruksi yang benar-benar sama. Karena semua AI bersifat non-deterministik, artinya AI bisa saja memberi respon berbeda-beda meski pertanyaan atau pernyataan yang diberikan benar-benar sama.
+
+** Tentang asisten koding (10 menit)
 *** Perkembangan asisten koding
 
 Dunia pengembangan perangkat lunak telah mengalami transformasi signifikan dalam alat bantu pemrograman. Bermula dari fitur /autocomplete/ sederhana yang hanya menyelesaikan kata kunci atau nama fungsi yang sudah diketahui, kini berkembang menjadi sistem cerdas yang mampu memahami konteks kode secara menyeluruh. Pada era awal, IDE seperti Visual Studio atau Eclipse menawarkan saran secara statis berdasarkan pustaka yang telah didefinisikan, namun memiliki keterbatasan dalam memahami logika.
 
-Kemajuan teknologi kecerdasan buatan, khususnya model bahasa besar (LLM), telah merevolusi asisten koding menjadi alat yang jauh lebih canggih. Asisten koding modern seperti GitHub Copilot, Cursor, ChatGPT, v0, Aider.chat dan lain sebagainya tidak hanya melengkapi baris kode yang sedang ditulis, tetapi juga mampu menghasilkan fungsi lengkap, algoritma kompleks, dan bahkan seluruh modul berdasarkan deskripsi bahasa manusia. Berbeda dengan cara tradisional, asisten berbasis AI memiliki kemampuan memahami pola penulisan kode dalam skala besar, menganalisis struktur proyek secara keseluruhan, dan menyesuaikan saran dengan gaya dari basis kode yang sudah ada. AI dapat memberikan penjelasan, mengusulkan refaktorisasi, mengidentifikasi kesalahan (/bug/) potensial, dan bahkan menghasilkan kode pengujian (/testing/) — kemampuan yang jauh melampaui pencapaian generasi sebelumnya.
+Kemajuan teknologi AI, khususnya model bahasa besar (LLM), telah merevolusi asisten koding menjadi alat yang jauh lebih canggih. Asisten koding modern seperti GitHub Copilot, Cursor, ChatGPT, v0, Aider.chat dan lain sebagainya tidak hanya melengkapi baris kode yang sedang ditulis, tetapi juga mampu menghasilkan fungsi lengkap, algoritma kompleks, dan bahkan seluruh modul berdasarkan deskripsi bahasa manusia. Berbeda dengan cara tradisional, asisten berbasis AI memiliki kemampuan memahami pola penulisan kode dalam skala besar, menganalisis struktur proyek secara keseluruhan, dan menyesuaikan saran dengan gaya dari basis kode yang sudah ada. AI dapat memberikan penjelasan, mengusulkan refaktorisasi, mengidentifikasi kesalahan (/bug/) potensial, dan bahkan menghasilkan kode pengujian (/testing/) — kemampuan yang jauh melampaui pencapaian generasi sebelumnya.
 
 *** Beberapa jenis asisten koding
 
@@ -71,7 +74,7 @@ AI yang interintegrasi dengan kode editor. Selain mampu memberi saran terhadap k
 - Cursor: Pelopor AI Code Editor, populer dan punya UX terbaik saat ini. Fork dari vscode.
 - VSCode + Copilot: Meskipun dalam bentuk extensi, Copilot (chat dan edit) punya kemampuan yang cukup mumpuni.
 - WindSurf: Fork dari vscode yang merupakan karya dari Codeium
-- Trae: Fork dari vscode punya ByteDance. Dapat digunakan secara gratis
+- Trae: Fork dari vscode punya ByteDance. (Sepertinya) dapat digunakan secara gratis
 - Aider, Claude Code: Menggunakan antarmuka teks (/cli/), dapat digunakan dengan editor kode apapun.
 
 [[file:./screenshots/claude-code.jpg]]
@@ -107,7 +110,7 @@ Di workshop kali ini kita akan menjajal sejauh mana AI bisa membantu kita dalam 
                                         +----------+
 #+END_SRC
 
-** Diskusi ide dengan AI (15 min)
+** Diskusi ide dengan AI (15 menit)
 
 Kita bisa memanfaatkan chatbot untuk mendiskusikan ide atau memilih ide yang menarik atau /brainstorming/. Ketika ide sudah didapat, kita dapat kembali menggunakan chatbot untuk mematangkan ide kita.
 
@@ -212,7 +215,7 @@ A web application designed to capture and retrieve user-generated ideas using a 
 
 #+END_SRC
 
-** Menyusun rencana dengan AI (15 min)
+** Menyusun rencana dengan AI (15 menit)
 Setelah ide cukup matang, saatnya merencanakan sebelum melakukan eksekusi rencana tersebut. Kita bisa menggunakan spec dari proses pematangan ide diatas untuk kemudian meminta bantuan AI untuk membuat rencana.
 
 Disarankan menggunakan model yang mampu berfikir (lebih panjang) seperti chatgpt o1, deepseek deepthink, atau Qwen Thinking.
@@ -395,7 +398,7 @@ Fix any issues discovered during testing. Once satisfied, prepare the app for de
 
 Setelah rencana dan strategi sudah siap, saatnya eksekusi dan membangun aplikasi.
 
-** Eksekusi menulis kode dengan AI (20 min)
+** Eksekusi menulis kode dengan AI (20 menit)
 Dari rencana yang sudah dikembangkan, kita bisa mulai eksekusi. Bisa langsung dengan menggunakan AI Code Editor seperti vscode+copilot, cursor atau yang serupa.
 
 Pengalaman pribadi sejauh ini, jika teknologi yang digunakan butuh integrasi manual, AI akan kesulitan. Contohnya seperti proyect berbasis nodejs dengan backend Express/Hono ditambah database apapun. AI seringkali mengalami kesulitan dalam melakukan setup. Selalu ada saja kesalahan atau /error/ yang seharusnya tidak perlu terjadi.
@@ -452,7 +455,7 @@ Jalankan iterasi satu-per-satu. Jika saat menjalankan sebuah iterasi dibutuhkan 
 
 [[file:./screenshots/contoh-iterasi.png]]
 
-** Mengelola Kode dengan AI (15 min)
+** Mengelola Kode dengan AI (15 menit)
 Setelah proses pengembangan fitur sudah (dianggap) selesai, saatnya beralih ke tahap pengelolaan kode. Pada tahap ini, AI juga dapat menjadi partner yang sangat membantu untuk meningkatkan kualitas kode yang telah dibuat.
 
 *** Menambahkan Pengujian Otomatis
@@ -495,13 +498,13 @@ I have this TypeScript app in /docs/references/v0. I want you to be able to acce
 
 Selain membantu pengembangan dan perbaikan kode, AI juga sangat berguna untuk proses /onboarding/ anggota tim baru. Saat menghadapi basis kode yang besar dan kompleks, AI dapat membantu menjelaskan struktur, logika, dan keputusan arsitektural yang mendasari proyek tersebut. Ini sangat berharga, terutama saat kita bergabung dengan proyek yang sudah berjalan dan perlu memahami sistem secara menyeluruh sebelum melakukan modifikasi.
 
-** Penutup (10 min)
+** Diskusi dan Penutup (10 menit)
 *** Tantangan
 Kalau saat workshop ini terkesan gampang, itu wajar. Karena saya sudah berulang-kali melakukannya. Coba setelah pulang coba lagi dari awal dengan proyek berbeda, saya yakin tidak selancar saat workshop. Apalagi buat yang baru-baru belajar ngoding.
 
-Nah disinilah tantangannya. Pemrogram berpengalaman menggunakan AI untuk mengakselerasi apa yang sudah diketahuinya. AI membantu mengerjakan hal-hal yang sifatnya berulang yang sudah /ngelotok/ dikepala.
+Nah disinilah tantangannya. Pemrogram berpengalaman menggunakan AI untuk mengakselerasi apa yang sudah diketahuinya. AI membantu mengerjakan hal-hal yang sifatnya berulang yang sudah "ngelotok" dikepala.
 
-Sedangkan teman-teman yang baru belajar biasanya cenderung menggunakan AI untuk menyelesaikan sebuah tugas atau /task/ yang belum pernah dikerjakan sebelumnya. Sehingga terkadang ketika menerima saran berupa kode dari AI, karena belum bisa membedakan solusi yang tepat dengan solusi /ngawur/, bisa saja yang ditambahkan malah kode yang /ngawur/ itu. Hasilnya bisa melebar kemana-mana. Mulai dari /ngebug/, performa aplikasi jadi terganggu, dan akan sulit melakukan /debugging/ kode yang diciptakan AI tadi.
+Sedangkan teman-teman yang baru belajar biasanya cenderung menggunakan AI untuk menyelesaikan sebuah tugas atau /task/ yang belum pernah dikerjakan sebelumnya. Sehingga terkadang ketika menerima saran berupa kode dari AI, karena belum bisa membedakan solusi yang tepat dengan solusi "ngawur", bisa saja yang ditambahkan malah kode yang "ngawur" itu. Hasilnya bisa melebar kemana-mana. Mulai dari aplikasi yang /ngebug/, performa aplikasi jadi terganggu, dan akan sulit melakukan /debugging/ kode yang diciptakan AI tadi karena pada tahap ini teman-teman belum mengerti benar kode yang diberikan oleh AI.
 
 Pastikan teman-teman memahami sepenuhnya kode yang disarankan tersebut sebelum menerima solusinya atau copy-paste ke code editor. Jika kesulitan memahami solusi yang diberikan, tanyakan kembali maksud dari baris kode yang diberikan itu apa. Karena ketika kode sudah masuk kedalam proyek, maka kode buatan AI tadi adalah tanggungjawab kita. Ngga mungkin kan ketika terjadi kesalahan kita menyalahkan AI?!
 
