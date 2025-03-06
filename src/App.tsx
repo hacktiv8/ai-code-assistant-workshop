@@ -99,6 +99,7 @@ function App() {
         {/* Create New Idea Button */}
         {searchTerm.trim() && (
           <button
+            aria-label="Create New Idea with This Text"
             onClick={() => addIdea(searchTerm)}
             className="mb-6 bg-white border-2 border-black p-3 flex items-center hover:bg-gray-100 transition-colors"
           >
