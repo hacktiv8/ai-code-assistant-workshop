@@ -92,7 +92,6 @@ AI yang spesifik digunakan untuk membangun /user interface/ atau desain. Jika ch
 Berikut contoh tangkapan layar dari v0.
 [[file:./screenshots/v0.png]]
 
-
 *** Kegiatan ngoding
 Di workshop kali ini kita akan menjajal sejauh mana AI bisa membantu kita dalam proses membangun aplikasi dari awal. Ketika ingin membangun aplikasi atau membuat sesuatu, umumnya dimulai dari memikirkan ide yang ingin dieksekusi, menyusun rencana, membangun aplikasi dan fitur hingga mengelola kode yang sudah dikembangkan. Kira-kira seperti ilustrasi dibawah.
 
@@ -465,20 +464,32 @@ Jalankan iterasi satu-per-satu. Jika saat menjalankan sebuah iterasi dibutuhkan 
 [[file:./screenshots/contoh-iterasi.png]]
 
 **** Catatan tambahan untuk bagian testing
+
+** Mengelola Kode dengan AI (15 menit)
+Setelah proses pengembangan fitur sudah (dianggap) selesai, saatnya beralih ke tahap pengelolaan kode. Pada tahap ini, AI juga dapat menjadi partner yang sangat membantu untuk meningkatkan kualitas kode yang telah dibuat.
+*** Menambahkan Pengujian Otomatis
+Salah satu manfaat penting dari asisten koding berbasis AI adalah kemampuannya untuk membantu membuat pengujian (testing). Dengan adanya pengujian yang baik, aplikasi yang kita kembangkan akan lebih tangguh dan minim kesalahan.
+
+Strategi yang efektif saat bekerja dengan AI untuk membuat pengujian adalah dengan menerapkan pendekatan kolaboratif. Buatlah satu kasus uji (/test case/) secara manual terlebih dahulu, kemudian minta AI untuk mengembangkan kasus-kasus uji tambahan berdasarkan contoh tersebut. Pengalaman menunjukkan bahwa jika kita meminta AI membuat pengujian tanpa contoh sama sekali, hasilnya seringkali kurang relevan dengan kode spesifik yang kita miliki.
+
+Pendekatan ini dalam dunia LLM dikenal dengan istilah /few-shot prompting/ – teknik di mana kita memberikan satu atau beberapa contoh konkret agar AI dapat "belajar" dari pola tersebut dan menghasilkan konten serupa dengan kualitas yang lebih baik. Untuk penjelasan lebih mendalam tentang teknik ini, [[https://dekontaminasi.substack.com/p/menyundul-llm-dengan-contoh-nyata][teman-teman dapat membaca artikel ini]]. 
+
+[[file:./screenshots/testing.png]]
+
 Berhubung proyek belum disiapkan untuk pengujian, sebelum /prompting/ untuk pembuatan pengujian atau /testing/ sebaiknya kita konfigurasi terlebih dahulu. Bisa minta tolong AI juga, kali ini kita akan menggunakan fitur Copilot Chat. Tapi akan lebih baik jika kita setup sendiri dan berikan satu atau beberapa contoh /test case/.
 
 #+BEGIN_SRC shell
 npm install --save-dev vitest @testing-library/react @testing-library/dom jsdom @types/react @types/react-dom
 #+END_SRC
 
-***** `package.json`
+**** `package.json`
 #+BEGIN_SRC json
 "scripts": {
     "test": "vitest"
   },
 #+END_SRC
 
-***** `src/smoke.test.ts`
+**** `src/smoke.test.ts`
 #+BEGIN_SRC typescript
 import { describe, it, expect } from "vitest"
 
@@ -489,7 +500,7 @@ describe("smoke test", () => {
 });
 #+END_SRC
 
-***** `vite.config.ts`
+**** `vite.config.ts`
 #+BEGIN_SRC diff
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
@@ -506,7 +517,7 @@ export default defineConfig({
 });
 #+END_SRC
 
-***** `src/App.test.tsx`
+**** `src/App.test.tsx`
 #+BEGIN_SRC typescript
 import { expect, test } from "vitest"
 import { render, screen } from '@testing-library/react'
@@ -528,18 +539,6 @@ test('loads and displays greeting', async () => {
 npm test
 #+END_SRC
 
-** Mengelola Kode dengan AI (15 menit)
-Setelah proses pengembangan fitur sudah (dianggap) selesai, saatnya beralih ke tahap pengelolaan kode. Pada tahap ini, AI juga dapat menjadi partner yang sangat membantu untuk meningkatkan kualitas kode yang telah dibuat.
-
-*** Menambahkan Pengujian Otomatis
-Salah satu manfaat penting dari asisten koding berbasis AI adalah kemampuannya untuk membantu membuat pengujian (testing). Dengan adanya pengujian yang baik, aplikasi yang kita kembangkan akan lebih tangguh dan minim kesalahan.
-
-Strategi yang efektif saat bekerja dengan AI untuk membuat pengujian adalah dengan menerapkan pendekatan kolaboratif. Buatlah satu kasus uji (/test case/) secara manual terlebih dahulu, kemudian minta AI untuk mengembangkan kasus-kasus uji tambahan berdasarkan contoh tersebut. Pengalaman menunjukkan bahwa jika kita meminta AI membuat pengujian tanpa contoh sama sekali, hasilnya seringkali kurang relevan dengan kode spesifik yang kita miliki.
-
-Pendekatan ini dalam dunia LLM dikenal dengan istilah /few-shot prompting/ – teknik di mana kita memberikan satu atau beberapa contoh konkret agar AI dapat "belajar" dari pola tersebut dan menghasilkan konten serupa dengan kualitas yang lebih baik. Untuk penjelasan lebih mendalam tentang teknik ini, [[https://dekontaminasi.substack.com/p/menyundul-llm-dengan-contoh-nyata][teman-teman dapat membaca artikel ini]]. 
-
-[[file:./screenshots/testing.png]]
-
 *** Mendokumentasikan Kode
 Sebagai seorang developer, menulis dokumentasi seringkali terasa seperti beban tambahan. Lebih menyenangkan rasanya fokus pada penulisan kode daripada menjelaskan cara kerjanya, bukan?! 😬 Di sinilah AI dapat mengambil alih tugas dokumentasi yang sering kali terbengkalai.
 
@@ -552,7 +551,7 @@ Yang menarik, jika AI menghasilkan dokumentasi yang kurang tepat atau terkesan "
 *** Melakukan Refactoring 
 Saat menulis kode, prioritas utama kita biasanya adalah membuat fitur berfungsi dengan benar. Filosofi "yang penting jalan dulu" sering diterapkan dengan rencana untuk merapikan kode di kemudian hari. Dengan adanya asisten AI, proses "beres-beres" ini menjadi jauh lebih efisien.
 
-Contoh sederhana: saat semua kode terkumpul dalam satu file seperti App.tsx, kita dapat meminta AI untuk memecahnya menjadi komponen-komponen terpisah yang lebih terorganisir.
+Contoh sederhana: saat semua kode terkumpul dalam satu file seperti ~App.tsx~, kita dapat meminta AI untuk memecahnya menjadi komponen-komponen terpisah yang lebih terorganisir.
 
 [[file:./screenshots/refactor.png]]
 
