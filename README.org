@@ -11,7 +11,7 @@
   - [[#tentang-asisten-koding-10-menit][Tentang asisten koding (10 menit)]]
   - [[#diskusi-ide-dengan-ai-15-menit][Diskusi ide dengan AI (15 menit)]]
   - [[#menyusun-rencana-dengan-ai-15-menit][Menyusun rencana dengan AI (15 menit)]]
-  - [[#eksekusi-menulis-kode-dengan-ai-20-menit][Eksekusi menulis kode dengan AI (20 menit)]]
+  - [[#menulis-kode-dengan-ai-20-menit][Menulis kode dengan AI (20 menit)]]
   - [[#mengelola-kode-dengan-ai-15-menit][Mengelola Kode dengan AI (15 menit)]]
   - [[#diskusi-dan-penutup-10-menit][Diskusi dan Penutup (10 menit)]]
 
@@ -401,7 +401,7 @@ Fix any issues discovered during testing. Once satisfied, prepare the app for de
 
 Setelah rencana dan strategi sudah siap, saatnya eksekusi dan membangun aplikasi.
 
-** Eksekusi menulis kode dengan AI (20 menit)
+** Menulis kode dengan AI (20 menit)
 Dari rencana yang sudah dikembangkan, kita bisa mulai eksekusi. Bisa langsung dengan menggunakan AI Code Editor seperti vscode+copilot, cursor atau yang serupa.
 
 Pengalaman pribadi sejauh ini, jika teknologi yang digunakan butuh integrasi manual, AI akan kesulitan. Contohnya seperti proyect berbasis nodejs dengan backend Express/Hono ditambah database apapun. AI seringkali mengalami kesulitan dalam melakukan setup. Selalu ada saja kesalahan atau /error/ yang seharusnya tidak perlu terjadi.
@@ -442,6 +442,12 @@ Layout: Main page includes a search form with results shown below.
 
 Hasil dari [[https://bolt.new/?rid=nzeu0d][Bolt]] dapat diunduh lalu dijalankan di localhost dan dibuka dengan AI Code Editor pilihan.
 
+#+BEGIN_SRC shell
+cd ai-coding-assistant-workshop
+npm install
+npm run dev
+#+END_SRC
+
 *** Mengembangka aplikasi
 Untuk workshop ini akan dicontohkan menggunakan vscode+copilot meskipun dapat juga menggunakan editor lain seperti cursor, windsurf dll. Tentu hasilnya akan berbeda. Bisa jadi hasilnya lebih baik, atau mungkin lebih buruk.
 
@@ -457,6 +463,70 @@ Untuk copilot sendiri, saat ini ada 3 fitur utama:
 Jalankan iterasi satu-per-satu. Jika saat menjalankan sebuah iterasi dibutuhkan penyesuaian, lakukan terlebih dahulu sebelum menuju ke iterasi berikutnya.
 
 [[file:./screenshots/contoh-iterasi.png]]
+
+**** Catatan tambahan untuk bagian testing
+Berhubung proyek belum disiapkan untuk pengujian, sebelum /prompting/ untuk pembuatan pengujian atau /testing/ sebaiknya kita konfigurasi terlebih dahulu. Bisa minta tolong AI juga, kali ini kita akan menggunakan fitur Copilot Chat. Tapi akan lebih baik jika kita setup sendiri dan berikan satu atau beberapa contoh /test case/.
+
+#+BEGIN_SRC shell
+npm install --save-dev vitest @testing-library/react @testing-library/dom jsdom @types/react @types/react-dom
+#+END_SRC
+
+***** `package.json`
+#+BEGIN_SRC json
+"scripts": {
+    "test": "vitest"
+  },
+#+END_SRC
+
+***** `src/smoke.test.ts`
+#+BEGIN_SRC typescript
+import { describe, it, expect } from "vitest"
+
+describe("smoke test", () => {
+  it("should pass", () => {
+    expect(true).toBe(true)
+  })
+});
+#+END_SRC
+
+***** `vite.config.ts`
+#+BEGIN_SRC diff
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  optimizeDeps: {
+    exclude: ['lucide-react'],
+  },
++ test: {
++   environment: 'jsdom'
++ }
+});
+#+END_SRC
+
+***** `src/App.test.tsx`
+#+BEGIN_SRC typescript
+import { expect, test } from "vitest"
+import { render, screen } from '@testing-library/react'
+import App from './App'
+
+test('loads and displays greeting', async () => {
+  // ARRANGE
+  render(<App />)
+
+  // ACT
+
+  // ASSERT
+  const header = screen.getByText("IDEA VAULT")
+  expect(header).toBeDefined()
+})
+#+END_SRC
+
+#+BEGIN_SRC shell
+npm test
+#+END_SRC
 
 ** Mengelola Kode dengan AI (15 menit)
 Setelah proses pengembangan fitur sudah (dianggap) selesai, saatnya beralih ke tahap pengelolaan kode. Pada tahap ini, AI juga dapat menjadi partner yang sangat membantu untuk meningkatkan kualitas kode yang telah dibuat.
