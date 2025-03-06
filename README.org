@@ -36,7 +36,6 @@ Peserta akan menyelesaikan satu siklus pengembangan aplikasi lengkap dengan bant
 
 [[file:./screenshots/prasyarat.png]]
 
-
 *** /Disclaimer/
 Hasil yang dihasilkan workshop saat ini bisa saja berbeda jika dijalankan ulang bahkan dengan instruksi yang benar-benar sama. Karena semua AI bersifat non-deterministik, artinya AI bisa saja memberi respon berbeda-beda meski pertanyaan atau pernyataan yang diberikan benar-benar sama.
 
@@ -87,7 +86,7 @@ AI yang interintegrasi dengan kode editor. Selain mampu memberi saran terhadap k
 AI yang spesifik digunakan untuk membangun /user interface/ atau desain. Jika chatbot dapat digunakan untuk apa saja termasuk membangun UI, /AI code completion/ dan /AI code editor/ pun bisa, tapi hasilnya lumayan berbeda. Mungkin karena AI ini menggunakan model yang memang dilatih untuk mengembangkan UI. Ada beberapa alat yang bisa digunakan.
 
 - v0.dev: Generative AI dengan /interface chat/ yang dioptimasi untuk mengembangkan komponen React dan ekosistem Next.
-- bolt.new: Generative AI dengan /interface chat/ untuk mengembangkan aplikasi frontend.
+- [[https://bolt.new/?rid=nzeu0d][bolt.new]]: Generative AI dengan /interface chat/ untuk mengembangkan aplikasi frontend.
 - lovable.dev: Aplikasi yang mampu membuat aplikasi fullstack. Cocok untuk konversi desain figma menjadi kode.
 
 Berikut contoh tangkapan layar dari v0.
@@ -414,9 +413,9 @@ Ada beberapa alasan yang menyebabkan hal ini (setidaknya menurut saya pribadi). 
 Sehingga menggunakan alat bantu seperti AI UI Generator merupakan cara yang bisa ditempuh.
 
 *** Desain antarmuka
-Jika v0 lebih cocok digunakan untuk mendesain komponen, bolt.new dapat kita manfaatkan untuk membangun UI untuk aplikasi frontend. Dari hasil desain frontend ini dapat dilanjutkan untuk mengembangkan backend, menambahkan database dan seterusnya dengan vscode+copilot.
+Jika v0 lebih cocok digunakan untuk mendesain komponen, [[https://bolt.new/?rid=nzeu0d][bolt.new]] dapat kita manfaatkan untuk membangun UI untuk aplikasi frontend. Dari hasil desain frontend ini dapat dilanjutkan untuk mengembangkan backend, menambahkan database dan seterusnya dengan vscode+copilot.
 
-Kita bisa menggunakan informasi di ~spec.md~ yang sudah dibuat sebagai /prompting/ untuk bolt ini.
+Kita bisa menggunakan informasi di ~spec.md~ yang sudah dibuat sebagai /prompting/ untuk [[https://bolt.new/?rid=nzeu0d][Bolt]] ini.
 
 Contoh
 
@@ -441,7 +440,7 @@ Layout: Main page includes a search form with results shown below.
 
 [[file:./screenshots/bolt.png]]
 
-Hasil dari bolt dapat diunduh lalu dijalankan di localhost dan dibuka dengan AI Code Editor pilihan.
+Hasil dari [[https://bolt.new/?rid=nzeu0d][Bolt]] dapat diunduh lalu dijalankan di localhost dan dibuka dengan AI Code Editor pilihan.
 
 *** Mengembangka aplikasi
 Untuk workshop ini akan dicontohkan menggunakan vscode+copilot meskipun dapat juga menggunakan editor lain seperti cursor, windsurf dll. Tentu hasilnya akan berbeda. Bisa jadi hasilnya lebih baik, atau mungkin lebih buruk.
@@ -494,7 +493,7 @@ Lebih dari itu, AI juga dapat membantu transformasi kode yang lebih kompleks, se
 - Mengidentifikasi potensi masalah performa atau keamanan
 - Melakukan migrasi antar teknologi (rewrite), misalnya dari JavaScript ke TypeScript, React+Vite ke Astro, atau bahkan transformasi lebih radikal seperti dari Python ke JavaScript atau iOS ke Android
 
-Pengalaman pribadi saya, pernah meminta bantuan desain melalui bolt dan v0, kemudian mengunduh kodenya sebagai referensi untuk proyek non-JavaScript/TypeScript. Selanjutnya, saya meminta AI untuk menganalisis gaya dari aplikasi tersebut dan menerapkannya ke aplikasi Elixir/Phoenix dengan /prompt/ sederhana:
+Pengalaman pribadi saya, pernah meminta bantuan desain melalui [[https://bolt.new/?rid=nzeu0d][Bolt]] dan v0, kemudian mengunduh kodenya sebagai referensi untuk proyek non-JavaScript/TypeScript. Selanjutnya, saya meminta AI untuk menganalisis gaya dari aplikasi tersebut dan menerapkannya ke aplikasi Elixir/Phoenix dengan /prompt/ sederhana:
 
 #+BEGIN_SRC txt
 I have this TypeScript app in /docs/references/v0. I want you to be able to access the TypeScript app, view the code of it inside the project. I don't want to break anything inside the Phoenix app. Then I want you to analyze the styles within that TypeScript app and apply those styles to our Elixir/Phoenix app
