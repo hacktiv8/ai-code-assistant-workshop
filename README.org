@@ -11,7 +11,7 @@
   - [[#tentang-asisten-koding-10-menit][Tentang asisten koding (10 menit)]]
   - [[#diskusi-ide-dengan-ai-15-menit][Diskusi ide dengan AI (15 menit)]]
   - [[#menyusun-rencana-dengan-ai-15-menit][Menyusun rencana dengan AI (15 menit)]]
-  - [[#eksekusi-menulis-kode-dengan-ai-20-menit][Eksekusi menulis kode dengan AI (20 menit)]]
+  - [[#menulis-kode-dengan-ai-20-menit][Menulis kode dengan AI (20 menit)]]
   - [[#mengelola-kode-dengan-ai-15-menit][Mengelola Kode dengan AI (15 menit)]]
   - [[#diskusi-dan-penutup-10-menit][Diskusi dan Penutup (10 menit)]]
 
@@ -401,7 +401,7 @@ Fix any issues discovered during testing. Once satisfied, prepare the app for de
 
 Setelah rencana dan strategi sudah siap, saatnya eksekusi dan membangun aplikasi.
 
-** Eksekusi menulis kode dengan AI (20 menit)
+** Menulis kode dengan AI (20 menit)
 Dari rencana yang sudah dikembangkan, kita bisa mulai eksekusi. Bisa langsung dengan menggunakan AI Code Editor seperti vscode+copilot, cursor atau yang serupa.
 
 Pengalaman pribadi sejauh ini, jika teknologi yang digunakan butuh integrasi manual, AI akan kesulitan. Contohnya seperti proyect berbasis nodejs dengan backend Express/Hono ditambah database apapun. AI seringkali mengalami kesulitan dalam melakukan setup. Selalu ada saja kesalahan atau /error/ yang seharusnya tidak perlu terjadi.
@@ -441,6 +441,12 @@ Layout: Main page includes a search form with results shown below.
 [[file:./screenshots/bolt.png]]
 
 Hasil dari [[https://bolt.new/?rid=nzeu0d][Bolt]] dapat diunduh lalu dijalankan di localhost dan dibuka dengan AI Code Editor pilihan.
+
+#+BEGIN_SRC shell
+cd ai-coding-assistant-workshop
+npm install
+npm run dev
+#+END_SRC
 
 *** Mengembangka aplikasi
 Untuk workshop ini akan dicontohkan menggunakan vscode+copilot meskipun dapat juga menggunakan editor lain seperti cursor, windsurf dll. Tentu hasilnya akan berbeda. Bisa jadi hasilnya lebih baik, atau mungkin lebih buruk.
