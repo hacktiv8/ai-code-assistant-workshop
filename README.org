@@ -50,9 +50,10 @@ Kemajuan teknologi AI, khususnya model bahasa besar (LLM), telah merevolusi asis
 
 **** /AI Chatbot/
 Meski bukan spesifik untuk membantu pemrograman, beberapa AI chatbot dapat digunakan untuk bertanya seputar kode dan pemrograman. Beberapa diantaranya:
-- ChatGPT.com
-- Claude.ai
-- chat.deepseek.com
+- [[https://chatgpt.com/][ChatGpt.com]]
+- [[https://claude.ai][Claude.ai]]
+- [[https://chat.deepseek.com][DeepSeek]]
+- [[https://chat.qwen.ai/][Qwen Chat]]
 
 Selain untuk meminta saran untuk kode, AI berbasis chatbot seperti ini sangat cocok untuk diskusi atau /brainstorming/.
 
@@ -61,10 +62,10 @@ Selain untuk meminta saran untuk kode, AI berbasis chatbot seperti ini sangat co
 **** /AI Code Completion/
 Dibawah ini beberapa alat yang dapat membantu untuk melengkapi kode disaat kita sedang menulis kode di editor.
 
-- GitHub Copilot: Asisten koding untuk menghasilkan, melengkapi, dan menyarankan kode secara real-time berdasarkan konteks yang kita berikan. Dapat dijalankan sebagai ekstensi vscode, jetbrains, dan vim.
-- Tabnine: Secara /timeline/ mungkin yang paling duluan, namun saat ini kalah pamor dibandingkan pesaingnya.
-- Supermaven: Dikenal sangat cepat dalam /code generation/ yang dapat digunakan di berbagai kode editor seperti vscode, vim, zed, dll.
-- Codeium: Ekstensi vscode /open-source/ yang dapat digunakan secara gratis untuk penggunaan personal.
+- [[https://github.com/features/copilot][GitHub Copilot]]: Asisten koding untuk menghasilkan, melengkapi, dan menyarankan kode secara real-time berdasarkan konteks yang kita berikan. Dapat dijalankan sebagai ekstensi vscode, jetbrains, dan vim.
+- [[https://www.tabnine.com/][Tabnine]]: Secara /timeline/ mungkin yang paling duluan, namun saat ini kalah pamor dibandingkan pesaingnya.
+- [[https://supermaven.com/][Supermaven]]: Dikenal sangat cepat dalam /code generation/ yang dapat digunakan di berbagai kode editor seperti vscode, vim, zed, dll.
+- [[https://codeium.com/][Codeium]]: Ekstensi vscode /open-source/ yang dapat digunakan secara gratis untuk penggunaan personal.
 
 [[./screenshots/completion.png]]
 
@@ -74,20 +75,20 @@ Evolusi berikutnya dari /code completion/. Jika /code completion/ mampu mengerti
 
 AI yang interintegrasi dengan kode editor. Selain mampu memberi saran terhadap kode yang sedang kita tulis (sama halnya dengan /code completion/) /AI Code Editor/ mampu membuat, mengubah atau menghapus satu atau beberapa file sekaligus dalam satu kali perintah.
 
-- Cursor: Pelopor AI Code Editor, populer dan punya UX terbaik saat ini. Fork dari vscode.
-- VSCode + Copilot: Meskipun dalam bentuk extensi, Copilot (chat dan edit) punya kemampuan yang cukup mumpuni.
-- WindSurf: Fork dari vscode yang merupakan karya dari Codeium
-- Trae: Fork dari vscode punya ByteDance. (Sepertinya) dapat digunakan secara gratis
-- Aider, Claude Code: Menggunakan antarmuka teks (/cli/), dapat digunakan dengan editor kode apapun.
+- [[https://www.cursor.com/][Cursor]]: Pelopor AI Code Editor, populer dan punya UX terbaik saat ini. Fork dari vscode.
+- [[https://code.visualstudio.com/][VSCode + Copilot]]: Meskipun dalam bentuk extensi, Copilot (chat dan edit) punya kemampuan yang cukup mumpuni.
+- [[https://codeium.com/windsurf][WindSurf]]: Fork dari vscode yang merupakan karya dari Codeium
+- [[https://www.trae.ai/][Trae]]: Fork dari vscode punya ByteDance. (Sepertinya) dapat digunakan secara gratis
+- [[https://aider.chat/][Aider]], [[https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview][Claude Code]]: Menggunakan antarmuka teks (/cli/), dapat digunakan dengan editor kode apapun.
 
 [[file:./screenshots/claude-code.jpg]]
 
 **** /AI interface builder/
 AI yang spesifik digunakan untuk membangun /user interface/ atau desain. Jika chatbot dapat digunakan untuk apa saja termasuk membangun UI, /AI code completion/ dan /AI code editor/ pun bisa, tapi hasilnya lumayan berbeda. Mungkin karena AI ini menggunakan model yang memang dilatih untuk mengembangkan UI. Ada beberapa alat yang bisa digunakan.
 
-- v0.dev: Generative AI dengan /interface chat/ yang dioptimasi untuk mengembangkan komponen React dan ekosistem Next.
+- [[https://v0.dev/][v0.dev]]: Generative AI dengan /interface chat/ yang dioptimasi untuk mengembangkan komponen React dan ekosistem Next.
 - [[https://bolt.new/?rid=nzeu0d][bolt.new]]: Generative AI dengan /interface chat/ untuk mengembangkan aplikasi frontend.
-- lovable.dev: Aplikasi yang mampu membuat aplikasi fullstack. Cocok untuk konversi desain figma menjadi kode.
+- [[https://lovable.dev/][lovable.dev]]: Aplikasi yang mampu membuat aplikasi fullstack. Cocok untuk konversi desain figma menjadi kode.
 
 Berikut contoh tangkapan layar dari v0.
 [[file:./screenshots/v0.png]]
