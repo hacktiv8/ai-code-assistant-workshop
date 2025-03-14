@@ -464,8 +464,6 @@ Jalankan iterasi satu-per-satu. Jika saat menjalankan sebuah iterasi dibutuhkan 
 
 [[file:./screenshots/contoh-iterasi.png]]
 
-**** Catatan tambahan untuk bagian testing
-
 ** Mengelola Kode dengan AI (15 menit)
 Setelah proses pengembangan fitur sudah (dianggap) selesai, saatnya beralih ke tahap pengelolaan kode. Pada tahap ini, AI juga dapat menjadi partner yang sangat membantu untuk meningkatkan kualitas kode yang telah dibuat.
 *** Menambahkan Pengujian Otomatis
@@ -539,6 +537,8 @@ test('loads and displays greeting', async () => {
 #+BEGIN_SRC shell
 npm test
 #+END_SRC
+
+Setelah memastikan testing berjalan, kita bisa mulai meminta LLM untuk membuatkan testing untuk kita.
 
 *** Mendokumentasikan Kode
 Sebagai seorang developer, menulis dokumentasi seringkali terasa seperti beban tambahan. Lebih menyenangkan rasanya fokus pada penulisan kode daripada menjelaskan cara kerjanya, bukan?! 😬 Di sinilah AI dapat mengambil alih tugas dokumentasi yang sering kali terbengkalai.
